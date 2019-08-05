@@ -1,8 +1,8 @@
 # Svelte Demonstrator and Starter App Template
 
-This is a project template for [Svelte](https://svelte.dev) apps.
+This is a project template for [Svelte 3](https://svelte.dev) apps.
 
-It is both a Component Demo and App Starter Template for Svelte. 
+It is both a Component Demonstrator and also an App Starter Template for Svelte.
 
 ## Demonstration
 
@@ -10,7 +10,8 @@ For a demonstration see [svelte-component-demo.surge.sh](http://svelte-component
 
 ## What is contains
 
-TL;DR; This looks pretty, but does nothing.
+TL;DR; This looks pretty, but does nothing useful.
+
 
 It is client side only - deploy it to AWS S3 or surge or elsewhere, or run it locally using npm run dev - no server (eg Sapper, Express, NodeJS) is required.
 
@@ -55,12 +56,10 @@ The whole project deployed comes in at close to 200K - that includes a 100K Hero
 
 ## Get started
 
-Install the dependencies...
-
-... then clone the source for this Demo from [github](https://github.com/keithj2780/svelte-starter-app)
+Clone the source for this Demo from [github](https://github.com/keithj2780/svelte-starter-app)
 
 ```bash
-github clone https://github.com/keithj2780/svelte-starter-app
+git clone https://github.com/keithj2780/svelte-starter-app
 ```
 
 Install the dependencies...
@@ -76,7 +75,7 @@ npm install
 npm run dev
 ```
 
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a components or pages file in `src/pages` `src/components`, save it, and the page should reload with your changes.
+Navigate to [localhost:8080](http://localhost:8080). You should see the app running. Edit a components or pages file in `src/pages` or `src/components`, save it, and the page should reload with your changes.
 
 
 ## Generate a production build
@@ -93,35 +92,4 @@ Sync to AWS with
 aws s3 sync ./public/ s3://$MY-BUCKET --acl public-read
 ```
 
-or
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-now
-```
-
-...alternatively...
-### With [surge.sh](https://surge.sh)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-surge
-```
-
-...and follow the prompts...
+or to [now](https://zeit.co/now) or [surge.sh](https://surge.sh)

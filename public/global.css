@@ -1,0 +1,99 @@
+:root {
+    --navbackground :  rgb(121, 175, 182);
+    --navbackgroundhover : rgb(153, 151, 151);
+	--navforeground :  rgb(72, 73, 82);
+	--navforegroundhover:black;
+    --navfontsize: 14px;
+	--navpadding : 10px 12px;
+	
+	--buttonbgcolor: #6190ac;
+	--buttonbgcolorhover: #70a7c7;
+	--buttonbgcoloractive: #7bb3d3;
+	--buttonbgcolordisabled: #add6ee;
+
+	--componentbgcolor: rgb(175, 213, 245);
+}
+
+:root {
+	--body-color: rgb(172, 182, 192);
+}
+h1 {
+  color: rgb(29, 95, 150);
+}
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin-bottom:70px;
+  }
+
+body {
+	color: #333;
+	background-color: var(--body-color);
+	margin: 0;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+	color: rgb(130, 147, 192);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgb(95, 96, 148);
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+input[type="range"] {
+	height: 0;
+}
+
+button {
+	background-color: var(--buttonbgcolor);
+	outline: none;
+}
+
+button:active {
+	background-color: var(--buttonbgcoloractive);
+}
+
+button:focus {
+	border-color: #666;
+}
+
+.closebtn {
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	color: white;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.closebtn:hover {
+	color: lightgrey;
+}

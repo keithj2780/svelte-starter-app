@@ -4,11 +4,11 @@ This is a project template for [Svelte](https://svelte.dev) apps.
 
 It is both a Component Demo and App Starter Template for Svelte. 
 
-##Demonstration
+## Demonstration
 
 For a demonstration see [svelte-component-demo.surge.sh](http://svelte-component-demo.surge.sh/).
 
-##What is contains
+## What is contains
 
 TL;DR; This looks pretty, but does nothing.
 

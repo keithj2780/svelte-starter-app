@@ -18,6 +18,8 @@
     right: -10px;
     padding: 5px 10px;
     border-radius: 50%;
+    color:white;
+    background-color: rgb(160, 47, 47);
     z-index:1;
 }
 </style>

@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" {style}>
     <img src={img} alt={title}>
     <div class="container">
         <h2>{title}</h2>
@@ -9,6 +9,7 @@
 </div>
 
 <script>
+    export let style;
     export let title;
     export let subtitle;
     export let img;
@@ -22,6 +23,7 @@
     padding: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: var(--componentbgcolor);
+    max-width:300px;
 }
 
 /* Some left and right padding inside the container */
@@ -45,8 +47,6 @@
   outline: 0;
   display: inline-block;
   padding: 8px;
-  color: white;
-  background-color: #000;
   text-align: center;
   cursor: pointer;
   width: 100%;

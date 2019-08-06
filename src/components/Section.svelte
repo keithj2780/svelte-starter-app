@@ -1,6 +1,10 @@
-<div class="section">
+<div class="section {style}">
     <slot></slot>
 </div>
+
+<script>
+    export let style="";
+</script>
 
 <style>
     :root {

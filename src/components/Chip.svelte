@@ -1,11 +1,16 @@
-<div class="chip">
+<div class="chip" {style}>
     <img src={img} alt={alt} width="96" height="96">
     <slot></slot>
+    {#if closeable == true}
+    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span> 
+    {/if}
 </div>
 
 <script>
+    export let style;
     export let img;
     export let alt;
+    export let closeable = false;
 </script>
 
 <style>
@@ -30,5 +35,11 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
+}
+
+.closebtn {
+	position: relative;
+	top: 0px;
+	right: -7px;
 }
 </style>

@@ -1,7 +1,11 @@
 
-<table class="table">
+<table class="table {style}">
     <slot></slot>
 </table>
+
+<script>
+    export let style="";
+</script>
 
 <style>
   table.table {

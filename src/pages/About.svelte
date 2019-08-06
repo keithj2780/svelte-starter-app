@@ -6,6 +6,8 @@
     import Toast from '../components/Toast.svelte';
     import Chip from '../components/Chip.svelte';
     import Badge from '../components/Badge.svelte';
+    import Timeline from '../components/Timeline.svelte';
+    import TimelineItem from '../components/TimelineItem.svelte';
 
 	import Popup from "../components/Popup.svelte";
 	import Callout from "../components/Callout.svelte";
@@ -26,6 +28,13 @@
 		calloutComponent.show();
 	}
 
+    let timelineItems = [
+    {   side:"left",  icon: "",   content:"<h2>Left school</h2><p>Started drinking and smoking</p>"       },
+    {   side:"right", icon: "",   content:"<h2>Left university</h2><p>Continued drinking and smoking</p>"       },
+    {   side:"right", icon: "",   content:"<h2>Left school</h2><p>Started drinking and smoking</p>"       },
+    {   side:"left",  icon: "",   content:"<h2>Left university</h2><p>Continued drinking and smoking</p>"       },
+    {   side:"right", icon: "",   content:"<h2>Left school</h2><p>Started drinking and smoking</p>"       },
+    ];
 </script>
 
 <style>
@@ -39,6 +48,13 @@
 <p>Path is {router.route}</p>
 <p>Params from URL are {JSON.stringify(router.params)} and the keys are specified in the router</p>
 <Container>
+    <Timeline >
+            <TimelineItem side='left' icon=''><h2>Left school</h2><p>Started drinking and smoking</p></TimelineItem>
+            <TimelineItem side='left' icon=''><h2>Left university</h2><p>Continued drinking and smoking</p></TimelineItem>
+            <TimelineItem side='right' icon=''><h2>Left school</h2><p>Stopped drinking and smoking</p></TimelineItem>
+            <TimelineItem side='right' icon=''><h2>Left university</h2><p>Then started drinking and smoking again</p></TimelineItem>
+    </Timeline>
+
     <Section>
     <Box>
         <h3>{name} Box Demo for {router.params.who} of {router.params.where}.</h3>
@@ -48,14 +64,14 @@
     </Box>
     </Section>
     <button on:click="{() => toast1.showToastForMS(700)}" class="badgeContainer"><span>Toast demo</span>
-        <span><Badge>700ms</Badge></span>
+        <span><Badge style="background:rgb(68, 153, 223)">700ms</Badge></span>
     </button>
     <button on:click="{() => toast2.showToastForMS(3000)}"  class="badgeContainer">Another Toast demo
-            <span><Badge>3s</Badge></span>
+            <span><Badge style="color:blue">3s</Badge></span>
     </button>
     <Section>
-        <Chip img="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="Home">Berts Chip</Chip>
-        <Chip img="https://randomuser.me/api/portraits/thumb/women/44.jpg" alt="Home">Bettys Chip</Chip>
+        <Chip img="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="Home" closeable={true}>Berts Chip</Chip>
+        <Chip img="https://randomuser.me/api/portraits/thumb/women/44.jpg" alt="Home" closeable={false}>Bettys Chip</Chip>
     </Section>
 
     <Container>
@@ -74,11 +90,19 @@
         </Box>
     </Container>
     <Container>
-        <Popup popuptext="Thanks for the click" ms=3000>Popup Demo happens for 3 secs if you click this text</Popup>
-        <Section><button on:click={doShowCallout}>Click to show the callout again</button></Section>
+            <Popup popuptext="Thanks for the click" ms=3000>Popup Demo happens for 3 secs if you click this text</Popup>
+            <Section><button on:click={doShowCallout}>Click to show the callout again</button></Section>
+        </Container>
+    <Container>
+            Stuff that needs more explaination 
+            <Popup popuptext="The Spark plan allows outbound network requests only to Google-owned services. Inbound invocation requests are allowed within the quota. On the Blaze plan, Cloud Functions provides a perpetual free tier. The first 2,000,000 invocations, 400,000 GB-sec, 200,000 CPU-sec, and 5 GB of Internet egress traffic is provided for free each month. You are only charged on usage past this free allotment. Pricing is based on total number of invocations, and compute time. Compute time is variable based on the amount of memory and CPU provisioned for a function. Usage limits are also enforced through daily and 100s quotas. For more information, see Cloud Functions Pricing."
+            ms=3000  tooltip=true style="font-size:12px; text-align:left;padding:6px;"><i class="fa fa-question-circle"></i></Popup>
+            <Section><button on:click={doShowCallout}>Click to show the callout again</button></Section>
     </Container>
+                
 
 </Container>
+
 <Toast id='toast-1' bind:this={toast1} >This is some toast</Toast>
 <Toast id='toast-2' bind:this={toast2} ><Chip img="https://randomuser.me/api/portraits/thumb/men/79.jpg" alt="Home">Chippo</Chip></Toast>
 <Callout bind:this={calloutComponent} header="This is a callout">Maybe you should consider a callout when you next need to ask your users if they know about cookies</Callout>

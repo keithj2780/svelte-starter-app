@@ -1,3 +1,12 @@
+<footer class="footer {style}">
+  <p>
+    <slot></slot>
+  </p>
+</footer>
+  
+<script>
+    export let style="";
+</script>
 <style>
     .footer {
         background-color: #aaaaaa;
@@ -12,8 +21,4 @@
     }
 </style>
 
-<footer class="footer">
-  <p>
-    <slot></slot>
-  </p>
-</footer>
+

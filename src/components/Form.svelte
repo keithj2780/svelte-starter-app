@@ -29,24 +29,11 @@
 
 /* Style the submit button */
 :global(.form button) {
-  background-color: 	var(--buttonbgcolor);
-
-  color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   float: right;
-}
-
-:global(.form button:hover) {
-  background-color: var(--buttonbgcolorhover);
-}
-:global(.form button:disabled)
-:global(.form button[disabled]) {
-  border: 1px solid #999999;
-  background-color: var(--buttonbgcolordisabled);
-  color: #666666;
 }
 
 /* Style the container */

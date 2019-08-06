@@ -6,15 +6,15 @@
     --navfontsize: 14px;
 	--navpadding : 10px 12px;
 	
+	--buttonfgcolor: rgb(202, 231, 250);
 	--buttonbgcolor: #6190ac;
 	--buttonbgcolorhover: #70a7c7;
 	--buttonbgcoloractive: #7bb3d3;
 	--buttonbgcolordisabled: #add6ee;
 
 	--componentbgcolor: rgb(175, 213, 245);
-}
+	--textcolor: rgb(34, 66, 92);
 
-:root {
 	--body-color: rgb(172, 182, 192);
 }
 h1 {
@@ -73,9 +73,14 @@ input[type="range"] {
 }
 
 button {
+	color: var(--buttonfgcolor);
 	background-color: var(--buttonbgcolor);
 	outline: none;
-}
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
 
 button:active {
 	background-color: var(--buttonbgcoloractive);
@@ -85,6 +90,17 @@ button:focus {
 	border-color: #666;
 }
 
+button:hover {
+	background-color: var(--buttonbgcolorhover);
+}
+
+button:disabled
+button[disabled] {
+	border: 1px solid #999999;
+	background-color: var(--buttonbgcolordisabled);
+	color: #666666;
+}  
+  
 .closebtn {
 	position: absolute;
 	top: 5px;

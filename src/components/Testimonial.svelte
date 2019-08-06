@@ -1,4 +1,4 @@
-<div class="testimonial">
+<div class="testimonial {style}">
     <img src={img} alt={alt} style="width:90px">
     <slot></slot>
 </div>
@@ -6,6 +6,8 @@
 <script>
     export let img;
     export let alt;
+    export let style="";
+
 </script>
 
 <style>

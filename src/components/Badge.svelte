@@ -1,6 +1,11 @@
-<div class="badge">
+<div class="badge" {style}>
     <slot></slot>
 </div>
+
+<script>
+  export let style;
+</script>
+
 <style>
 :global(.badgeContainer) {
   position: relative;
@@ -9,12 +14,10 @@
 
 :global(.badgeContainer .badge) {
     position: absolute;
-    top: -10px;
+    top: -13px;
     right: -10px;
     padding: 5px 10px;
     border-radius: 50%;
-    background: rgb(163, 14, 14);
-    color: white;
     z-index:1;
 }
 </style>

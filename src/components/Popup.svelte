@@ -1,16 +1,19 @@
 {#if tooltip}
 <div class="popup tooltip">
-        <slot></slot>
-        <span class="popuptext {show}" id="myPopup">{popuptext}</span>
+  <slot></slot>
+  <span class="popuptext {show}" id="myPopup" {style}>{popuptext} </span>
 </div>
 {:else}
 <div class="popup" on:click={showPopup}>
     <slot></slot>
-    <span class="popuptext {show}" id="myPopup">{popuptext}</span>
+    <span class="popuptext {show}" id="myPopup" {style}>{popuptext}</span>
 </div>
 {/if}
 
 <script>
+    import onMount from 'svelte';
+
+    export let style;
     export let popuptext;
     export let tooltip = false;
     export let ms=5000;
@@ -23,6 +26,7 @@
 
         setTimeout(function(){ show = ""; }, ms);
     }
+
 </script>
 
 <style>
@@ -31,6 +35,11 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+:global(.popup .popuptext) {
+  font-size:12px;
 }
 
 /* The actual popup (appears on top) */

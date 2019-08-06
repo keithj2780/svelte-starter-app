@@ -1,9 +1,10 @@
-<div class="snackbar{show}">
+<div class="snackbar{show} {style}">
     <slot></slot>
 </div>
 
 <script>
     export let show="";
+    export let style="";
 
     export function showToast() {
         let ms = 3000;

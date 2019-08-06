@@ -1,7 +1,16 @@
+<div class="callout{hidden} {style}">
+        <div class="callout-header">{header}</div>
+        <span class="closebtn" on:click={hide1}>×</span>
+        <div class="callout-container">
+            <slot></slot>
+        </div>
+    </div>
+    
 <script>
         //"this.parentElement.style.display='none';"></span>
     export let header="";
     export let hidden="";     //  default to visible
+    export let style="";
 
     export function show() {
         hidden = '';
@@ -11,14 +20,6 @@
         hidden = 'Hide';
     }
 </script>
-
-<div class="callout{hidden}">
-    <div class="callout-header">{header}</div>
-    <span class="closebtn" on:click={hide1}>×</span>
-    <div class="callout-container">
-        <slot></slot>
-    </div>
-</div>
 
 <style>
     .calloutHide {

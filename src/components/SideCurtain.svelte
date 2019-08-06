@@ -1,9 +1,11 @@
-<div class="sideCurtain" id="theSideCurtain">
+<div class="sideCurtain {style}" id="theSideCurtain">
     <span class="closebtn" on:click={closeCurtain}>&times;</span>
     <slot></slot>
 </div>
 
 <script>
+  export let style="";
+
   export function openCurtain() {
     console.log("openCurtain");
     document.getElementById("theSideCurtain").style.width = "250px";

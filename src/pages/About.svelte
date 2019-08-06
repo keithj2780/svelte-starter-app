@@ -6,8 +6,6 @@
     import Toast from '../components/Toast.svelte';
     import Chip from '../components/Chip.svelte';
     import Badge from '../components/Badge.svelte';
-    import Timeline from '../components/Timeline.svelte';
-    import TimelineItem from '../components/TimelineItem.svelte';
 
 	import Popup from "../components/Popup.svelte";
 	import Callout from "../components/Callout.svelte";
@@ -28,13 +26,6 @@
 		calloutComponent.show();
 	}
 
-    let timelineItems = [
-    {   side:"left",  icon: "",   content:"<h2>Left school</h2><p>Started drinking and smoking</p>"       },
-    {   side:"right", icon: "",   content:"<h2>Left university</h2><p>Continued drinking and smoking</p>"       },
-    {   side:"right", icon: "",   content:"<h2>Left school</h2><p>Started drinking and smoking</p>"       },
-    {   side:"left",  icon: "",   content:"<h2>Left university</h2><p>Continued drinking and smoking</p>"       },
-    {   side:"right", icon: "",   content:"<h2>Left school</h2><p>Started drinking and smoking</p>"       },
-    ];
 </script>
 
 <style>
@@ -48,12 +39,6 @@
 <p>Path is {router.route}</p>
 <p>Params from URL are {JSON.stringify(router.params)} and the keys are specified in the router</p>
 <Container>
-    <Timeline >
-            <TimelineItem side='left' icon=''><h2>Left school</h2><p>Started drinking and smoking</p></TimelineItem>
-            <TimelineItem side='left' icon=''><h2>Left university</h2><p>Continued drinking and smoking</p></TimelineItem>
-            <TimelineItem side='right' icon=''><h2>Left school</h2><p>Stopped drinking and smoking</p></TimelineItem>
-            <TimelineItem side='right' icon=''><h2>Left university</h2><p>Then started drinking and smoking again</p></TimelineItem>
-    </Timeline>
 
     <Section>
     <Box>

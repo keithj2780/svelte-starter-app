@@ -101,7 +101,7 @@ body {
   right: 30px;
   border: medium solid white;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
+  border-color: transparent transparent transparent var(--componentbgcolor);
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -115,7 +115,7 @@ body {
   left: 30px;
   border: medium solid white;
   border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
+  border-color: transparent var(--componentbgcolor) transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -126,7 +126,7 @@ body {
 /* The actual content */
 .content {
   padding: 20px 30px;
-  background-color: white;
+  background-color: var(--componentbgcolor);
   position: relative;
   border-radius: 6px;
 }

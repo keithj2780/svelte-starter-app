@@ -6,6 +6,7 @@
 	import Login from './pages/Login.svelte';
 	import EmployeeCards from './pages/EmployeeCards.svelte';
 	import Images from './pages/Images.svelte';
+	import TimelinePage from './pages/TimelinePage.svelte';
 	import EmployeeTestimonials from './pages/EmployeeTestimonials.svelte';
 	import Index from './pages/Index.svelte';
 	import Contact from './pages/Contact.svelte';
@@ -35,5 +36,6 @@
     <Route path="/testimonials">
         <EmployeeTestimonials employees={emps}/>
     </Route>
+    <Route path="/timeline" component={TimelinePage}/>
     <Route path="/" component={Index} exact/>
 </Router>

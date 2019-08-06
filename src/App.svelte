@@ -41,6 +41,7 @@
 			<Link href="/table"><i class="fa fa-fw fa-table"></i> Table Demo</Link>
 			<Link href="/tabs"><img src="./img/credit-card.svg" alt="Tabs"/> Tabs Demo</Link>
 			<Link href="/testimonials"><i class="fa fa-fw fa-user-tie"></i> Testimonials Demo</Link>
+			<Link href="/timeline"><i class="fa fa-fw fa-user"></i> Timeline Demo</Link>
 		</div>
 	</div> 
 	<Link href="/carousel">Carousel</Link>

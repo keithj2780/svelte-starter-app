@@ -1,7 +1,8 @@
-<div class="timelineitem" {style}>
-    <div class="container  {side}">
-        <div class="content">
+<div class="timelineitem">
+    <div class="container  {side} ">
+        <div class="content " {style}>
             <slot></slot>
+            {@debug style}
         </div>
     </div>
 </div>
@@ -13,7 +14,7 @@
     export let items=[];
 
     onMount(() => {
-
+        console.log('style='+style);
     });
 
 </script>
@@ -23,30 +24,6 @@
     box-sizing: border-box;
 }
 
-/* Set a background color */
-body {
-    background-color: var(--body-color);
-    font-family: Helvetica, sans-serif;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: var(--componentbgcolor);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-}
 
 /* Container around content */
 .container {
@@ -89,9 +66,9 @@ body {
     width: 0;
     z-index: 1;
     right: 30px;
-    border: medium solid white;
+    border: medium solid var(--componentbgcolor);
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
+    border-color: transparent transparent transparent var(--componentbgcolor);
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -103,9 +80,9 @@ body {
     width: 0;
     z-index: 1;
     left: 30px;
-    border: medium solid white;
+    border: medium solid var(--componentbgcolor);
     border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+    border-color: transparent var(--componentbgcolor) transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -114,9 +91,9 @@ body {
 }
 
 /* The actual content */
-.content {
+:global(.content) {
     padding: 20px 30px;
-    background-color: white;
+    background-color: var(--componentbgcolor);
     position: relative;
     border-radius: 6px;
 }

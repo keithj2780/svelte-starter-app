@@ -3,13 +3,13 @@
     <Container>
             <h2>Demo 1</h2>
             <Timeline >
-                <TimelineItem side='left' icon='' style="background-color:rgb(59, 95, 59)">
+                <TimelineItem side='left' icon='' backgroundColor="rgb(59, 95, 59)">
                     <h2>Left school</h2>
                     <p>Started drinking and smoking</p>
                 </TimelineItem>
-                <TimelineItem side='left' icon='' style="background-color:green"><h2>Left university</h2><p>Continued drinking and smoking</p></TimelineItem>
+                <TimelineItem side='left' icon='' backgroundColor="green"><h2>Left university</h2><p>Continued drinking and smoking</p></TimelineItem>
                 <TimelineItem side='right' icon=''><h2>Left school</h2><p>Stopped drinking and smoking</p></TimelineItem>
-                <TimelineItem side='right' icon='' style="background-color:red"><h2>Kept smoking</h2><p>Then started drinking and smoking again</p></TimelineItem>
+                <TimelineItem side='right' icon='' backgroundColor="rgb(59, 195, 59)"><h2>Kept smoking</h2><p>Then started drinking and smoking again</p></TimelineItem>
         </Timeline>
     </Container>
 

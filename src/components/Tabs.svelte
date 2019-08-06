@@ -3,7 +3,33 @@
     <slot></slot>
 </div>
 
-    
+<script>
+    export function selectTab(selectedTabId) {
+        //console.log('tabName='+selectedTabId);
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them (except the selected ID)
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            //console.log('tabcontent='+tabcontent[i].id);
+            if (tabcontent[i].id === selectedTabId)
+                tabcontent[i].style.display = "block";
+            else
+                tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active" (except the selected ID)
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            //console.log('tablinks='+tablinks[i].id);
+            if (tablinks[i].id === selectedTabId)
+                tablinks[i].className = tablinks[i].className += " active";
+            else
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+    }
+
+</script>  
 
 <style>
 

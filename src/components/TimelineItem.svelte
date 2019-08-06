@@ -10,16 +10,26 @@
     import {onMount} from "svelte";
 
     export let style="";
+    export let backgroundColor;
     export let side="left";
     export let items=[];
 
     onMount(() => {
-        console.log('style='+style);
+        if (backgroundColor) {
+            let items = document.getElementsByClassName("timelineitem");
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.setProperty('--bgcolor', backgroundColor);
+            }
+        }
     });
 
 </script>
 
 <style>
+:root {
+    --bgcolor : var(--componentbgcolor);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -66,9 +76,9 @@
     width: 0;
     z-index: 1;
     right: 30px;
-    border: medium solid var(--componentbgcolor);
+    border: medium solid red;
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent var(--componentbgcolor);
+    border-color: transparent transparent transparent var(--bgcolor);
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -80,9 +90,9 @@
     width: 0;
     z-index: 1;
     left: 30px;
-    border: medium solid var(--componentbgcolor);
+    border: medium solid var(--bgcolor);
     border-width: 10px 10px 10px 0;
-    border-color: transparent var(--componentbgcolor) transparent transparent;
+    border-color: transparent var(--bgcolor) transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -93,7 +103,7 @@
 /* The actual content */
 :global(.content) {
     padding: 20px 30px;
-    background-color: var(--componentbgcolor);
+    background-color: var(--bgcolor);
     position: relative;
     border-radius: 6px;
 }

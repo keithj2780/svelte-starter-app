@@ -3,48 +3,18 @@
     import Container from '../components/Container.svelte';
     import { onMount } from 'svelte';
     
-    export let router = {};
-        
-        // Those contains useful information about current route status
-        router.path; // /test
-        router.route; // Route Object
-        router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
-    
-        export let employees;
-        let empId=0;
+    export let employees;
+    let empId=0;
+    let tabs;
     
     onMount(() => {
         console.log(employees[0]);
-        selectTab('0');     //  this assumes that the first tab's ID is '0'
+        tabs.selectTab('0');     //  this assumes that the first tab's ID is '0'
     });
         
     function openTab(evt) {
         let selectedTabId = evt.target.id;
-        selectTab(selectedTabId);
-    }
-    function selectTab(selectedTabId) {
-        //console.log('tabName='+selectedTabId);
-        var i, tabcontent, tablinks;
-
-        // Get all elements with class="tabcontent" and hide them (except the selected ID)
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            //console.log('tabcontent='+tabcontent[i].id);
-            if (tabcontent[i].id === selectedTabId)
-                tabcontent[i].style.display = "block";
-            else
-                tabcontent[i].style.display = "none";
-        }
-
-        // Get all elements with class="tablinks" and remove the class "active" (except the selected ID)
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            //console.log('tablinks='+tablinks[i].id);
-            if (tablinks[i].id === selectedTabId)
-                tablinks[i].className = tablinks[i].className += " active";
-            else
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
+        tabs.selectTab(selectedTabId);
     }
     </script>
         
@@ -58,7 +28,7 @@
     <Container>
         <h1>Employee Tabs</h1>
         <p>We have loads of amazing tabs full of Employees.</p> 
-        <Tabs id="myTabs">
+        <Tabs id="myTabs" bind:this={tabs} >
             <div class="tab">
             {#each employees as emp, i}
                 <button class="tablinks" id={i} on:click={openTab}>{emp.name.first}</button>

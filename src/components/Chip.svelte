@@ -21,7 +21,7 @@
   font-size: 16px;
   line-height: 50px;
   border-radius: 25px;
-  background-color: var(--navbackground);
+  background-color: var(--componentbgcolor);
   border: 1px solid rgb(102, 102, 102);
 }
 

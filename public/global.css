@@ -15,12 +15,8 @@
 	--componentbgcolor: rgb(175, 213, 245);
 	--textcolor: rgb(34, 66, 92);
 
-	--body-color: rgb(172, 182, 192);
+	--body-color: rgb(172, 192, 178);
 }
-h1 {
-  color: rgb(29, 95, 150);
-}
-
 html, body {
 	position: relative;
 	width: 100%;
@@ -29,14 +25,19 @@ html, body {
   }
 
 body {
-	color: #333;
+	color: var(--textcolor);
 	background-color: var(--body-color);
 	margin: 0;
+	margin-bottom:70px;
 	padding: 0px;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+h1 {
+	color: rgb(29, 95, 150);
+  }
+  
 a {
 	color: rgb(130, 147, 192);
 	text-decoration: none;

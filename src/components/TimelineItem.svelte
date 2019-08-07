@@ -15,11 +15,11 @@
     export let items=[];
 
     onMount(() => {
-        //  this is wrong!  It (incorrectly) sets ALL timelineitems to the most recent BG color
+        //  this is wrong!  It (incorrectly) sets ALL timelineitem to the most recent BG color
         if (backgroundColor) {
             let items = document.getElementsByClassName("timelineitem");
             for (let i = 0; i < items.length; i++) {
-                //items[i].style.setProperty('--bgcolor', backgroundColor);
+                items[i].style.setProperty('--bgcolor', backgroundColor);
             }
         }
     });

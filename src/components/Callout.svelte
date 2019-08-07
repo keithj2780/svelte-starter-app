@@ -50,7 +50,7 @@
     .callout-container {
         padding: 15px;
         background-color: var(--componentbgcolor);
-        color: black;
+        color: var(--textcolor);
         border-radius: 0 0 14px 14px;        /* top-left | top-right | bottom-right | bottom-left */
     }
     

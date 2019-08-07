@@ -26,6 +26,18 @@
 		calloutComponent.show();
 	}
 
+    export function setTheme1(col) {
+        let colBG = 'rgb(82, 171, 53)';
+        let colText = 'rgb(10,150,21)';
+        let colBody = 'rgb(170,225,158)';
+        let items = document.getElementsByTagName("body");
+        if (items[0]) {
+            items[0].style.setProperty('--body-color', colBody);
+            items[0].style.setProperty('--textcolor', colText);
+            items[0].style.setProperty('--componentbgcolor', colBG);      //  these CSS vars are in global.css
+        }
+    }
+
 </script>
 
 <style>
@@ -85,6 +97,8 @@
             <Section><button on:click={doShowCallout}>Click to show the callout again</button></Section>
     </Container>
                 
+    <Section><button on:click={setTheme1}>Set Green Theme</button></Section>
+
 
 </Container>
 

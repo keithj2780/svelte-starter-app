@@ -20,6 +20,10 @@
 	export function doCloseCurtain() {
 		sideSlider.closeCurtain();
 	}
+	export function closeDropdown() {
+		navbar.closeDropdown();
+  	}
+
 	onMount(()=>{
 	});
 
@@ -34,7 +38,7 @@
 	<Link on:click={doOpenCurtain}>Side Curtain</Link>
 	<div class="dropdown">
 		<button class="dropbtn">Dropdown <i class="fa fa-angle-down"></i></button>
-		<div class="dropdown-content">
+		<div class="dropdown-content" on:click={closeDropdown}>
 			<Link href="/cards"><i class="fa fa-fw "></i> Card Demo</Link>
 			<Link href="/contact/Berty/Worcester"><i class="fa fa-fw fa-sign-in"></i> Form Demo</Link>
 			<Link href="/login"><i class="fa fa-fw "></i> Modal Demo</Link>
@@ -47,7 +51,7 @@
 	<Link href="/carousel">Carousel</Link>
 	<div class="dropdown">
 		<button class="dropbtn">Mega <i class="fa fa-angle-down"></i></button>
-		<div class="dropdown-content mega-dropdown-content">
+		<div class="dropdown-content mega-dropdown-content" on:click={closeDropdown}>
 			<div class="header">
 				<h2>Mega Menu</h2>
 			</div> 

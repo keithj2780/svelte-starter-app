@@ -1,4 +1,4 @@
-<div class="container {style}">
+<div class="container" {style}>
     <slot></slot>
 </div>
 

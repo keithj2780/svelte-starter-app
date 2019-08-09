@@ -1,4 +1,4 @@
-<div class="box {style}">
+<div class="box " {style}>
     <slot></slot>
 </div>
 

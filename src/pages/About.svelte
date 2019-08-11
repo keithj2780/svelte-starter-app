@@ -1,11 +1,13 @@
-<!-- ./pages/About.svelte -->
 <script>
+    import {onMount, createEventDispatcher} from 'svelte';
+
     import Container from '../components/Container.svelte';
     import Section from '../components/Section.svelte';
     import Box from '../components/Box.svelte';
     import Toast from '../components/Toast.svelte';
     import Chip from '../components/Chip.svelte';
     import Badge from '../components/Badge.svelte';
+    import Loader from '../components/Loader.svelte';
 
 	import Popup from "../components/Popup.svelte";
 	import Callout from "../components/Callout.svelte";
@@ -20,8 +22,18 @@
     let name = 'Svelte';
     let toast1;
     let toast2;
+    let toast3;
+    let loader1;
+    let loader2;
+    let bLoaderVisible=false;
 
-	let calloutComponent;
+    let calloutComponent;
+
+    onMount(() => {
+        loader1.hide();
+        loader2.hide();
+    });
+
 	export function doShowCallout() {
 		calloutComponent.show();
 	}
@@ -36,6 +48,11 @@
             items[0].style.setProperty('--textcolor', colText);
             items[0].style.setProperty('--componentbgcolor', colBG);      //  these CSS vars are in global.css
         }
+    }
+    function toggleLoader() {
+        bLoaderVisible = !bLoaderVisible;
+        if (bLoaderVisible) loader1.show();
+        else loader1.hide();
     }
 
 </script>
@@ -67,8 +84,12 @@
             <span><Badge style="color:blue">3s</Badge></span>
     </button>
     <Section>
-        <Chip img="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="Home" closeable={true}>Berts Chip</Chip>
+        <span>
+            <Chip img="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="Home" on:close="{() => loader2.show()}" closeable={true}>Berts Chip</Chip>
+            <Loader  bind:this={loader2} timeout=6000/>
+        </span>
         <Chip img="https://randomuser.me/api/portraits/thumb/women/44.jpg" alt="Home" closeable={false}>Bettys Chip</Chip>
+        
     </Section>
 
     <Container>
@@ -98,11 +119,14 @@
     </Container>
                 
     <Section><button on:click={setTheme1}>Set Green Theme</button></Section>
+    <Section><button on:click={toggleLoader}>Toggle Loader</button>
+    <Loader bind:this={loader1}/>
+    </Section>
 
 
 </Container>
 
 <Toast id='toast-1' bind:this={toast1} >This is some toast</Toast>
 <Toast id='toast-2' bind:this={toast2} ><Chip img="https://randomuser.me/api/portraits/thumb/men/79.jpg" alt="Home">Chippo</Chip></Toast>
-<Callout bind:this={calloutComponent} header="This is a callout">Maybe you should consider a callout when you next need to ask your users if they know about cookies</Callout>
-
+<Toast id='toast-3' bind:this={toast3} >Thanks for closing the Callout<br/>You're a real pal.</Toast>
+<Callout bind:this={calloutComponent} on:close="{() => toast3.showToastForMS(3000)}" header="This is a callout">Maybe you should consider a callout when you next need to ask your users if they know about cookies</Callout>

@@ -95,7 +95,7 @@
             </div>
             <div class="row">
                 {#if busy}
-                    <button class="button" disabled><i class="fa fa-refresh fa-spin"></i></button>
+                    <button class="button" disabled><i class="fa fa-refresh fa-spin"></i> Submitting</button>
                 {:else}
                     <button class="button" on:click={handleSubmit}>Submit</button>
                 {/if}

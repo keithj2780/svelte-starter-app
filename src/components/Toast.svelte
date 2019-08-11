@@ -3,19 +3,24 @@
 </div>
 
 <script>
+	import { createEventDispatcher } from 'svelte';
+
     export let show="";
     export let style="";
+
+
+	const dispatch = createEventDispatcher();
 
     export function showToast() {
         let ms = 3000;
         show = "show";
-        setTimeout(function(){ show = ""; }, ms);
+        setTimeout(function(){ show = ""; dispatch('close',{}); }, ms);
     }
 
     export function showToastForMS(ms) {
         show = "show";
         // After 3 seconds, remove the show class from DIV
-        setTimeout(function(){ show=""; }, ms);
+        setTimeout(function(){ show=""; dispatch('close',{}); }, ms);
     }
 
 </script>

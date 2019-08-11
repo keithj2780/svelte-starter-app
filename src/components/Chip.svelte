@@ -2,15 +2,25 @@
     <img src={img} alt={alt} width="96" height="96">
     <slot></slot>
     {#if closeable == true}
-    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span> 
+    <span class="closebtn" on:click={doClose}>&times;</span> 
     {/if}
 </div>
 
 <script>
+    import { createEventDispatcher } from 'svelte';
+
     export let style;
     export let img;
     export let alt;
     export let closeable = false;
+
+  const dispatch = createEventDispatcher();
+
+  function doClose() {
+    this.parentElement.style.display='none';
+    dispatch('close',{});
+  }
+
 </script>
 
 <style>

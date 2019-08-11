@@ -7,10 +7,15 @@
     </div>
     
 <script>
+
+    import { createEventDispatcher } from 'svelte';
+
         //"this.parentElement.style.display='none';"></span>
     export let header="";
     export let hidden="";     //  default to visible
     export let style="";
+
+    const dispatch = createEventDispatcher();
 
     export function show() {
         hidden = '';
@@ -18,6 +23,7 @@
     export function hide1() {
         console.log('hide');
         hidden = 'Hide';
+        dispatch('close',{});
     }
 </script>
 

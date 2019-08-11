@@ -23,19 +23,19 @@
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
                     <div class="numbertext">1 / 3</div>
-                    <img src="https://picsum.photos/id/100/2500/1656" style="width:100%">
+                    <img src="https://picsum.photos/id/100/2500/1656" style="width:100%" alt="">
                     <div class="text">Caption Text</div>
                 </div>
                 
                 <div class="mySlides fade">
                     <div class="numbertext">2 / 3</div>
-                    <img src="https://picsum.photos/id/1001/5616/3744" style="width:100%">
+                    <img src="https://picsum.photos/id/1001/5616/3744" style="width:100%" alt="">
                     <div class="text">Caption Two</div>
                 </div>
                 
                 <div class="mySlides fade">
                     <div class="numbertext">3 / 3</div>
-                    <img src="https://picsum.photos/id/10/2500/1667" style="width:100%">
+                    <img src="https://picsum.photos/id/10/2500/1667" style="width:100%" alt="">
                     <div class="text">Caption Three</div>
                 </div>
                 

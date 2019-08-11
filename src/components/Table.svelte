@@ -17,29 +17,34 @@
     background-color: #a8c5d8;
   }
   
-  :global(th) {
+  :global(.table th) {
     text-align: center;
     padding: 12px;
     border-bottom: 1px solid rgb(124, 122, 122);
   }
   
-  :global(td) {
+  :global(.table td) {
     text-align: left;
     padding: 1px;
     border-bottom: 2px solid rgb(124, 122, 122); 
   }
   
-  :global(tr) {
+  :global(.table tr) {
     border-bottom: 1px solid #ddd; 
   }
   
-  :global(tr:nth-child(even)) {
+  :global(.table tr:nth-child(even)) {
     background-color: #98aeb4
   }
 
-  :global(tr.header), :global(tr:hover) {
+  :global(.table tr.header) {
     /* Add a grey background color to the table header and on hover */
-    background-color: #708d94;
+    background-color: #485a5f;
+  }
+
+  :global(.table tr:hover) {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #ca95a5;
   }
 
 </style>

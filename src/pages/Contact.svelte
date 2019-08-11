@@ -17,7 +17,7 @@
     let lastname="";
     let message="";
     let dayRating=1;
-    let picked_date;
+    let picked_date = "05/08/2019";
     let show_date_picker = false;
 
     let controlRating;

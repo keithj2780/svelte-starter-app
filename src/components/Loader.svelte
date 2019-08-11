@@ -12,14 +12,16 @@
 	const dispatch = createEventDispatcher();
 
     onMount(() => {
-        if (timeout) 
-            setTimeout(function(){ hide(); dispatch('close',{}); }, timeout);
+        hidden="";
     });
     export function hide() {
         hidden='hide';
     }
     export function show() {
         hidden="";
+        console.log('timeout='+timeout);
+        if (timeout) 
+            setTimeout(function(){ hide(); dispatch('close',{}); }, timeout);
     }
 </script>
 <style>

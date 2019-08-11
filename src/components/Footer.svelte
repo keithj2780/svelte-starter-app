@@ -1,4 +1,4 @@
-<footer class="footer {style}">
+<footer class="footer" {style}>
   <p>
     <slot></slot>
   </p>

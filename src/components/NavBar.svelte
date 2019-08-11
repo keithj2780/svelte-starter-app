@@ -16,6 +16,7 @@
     for (let i = 0; i < items.length; i++) {
       console.log("items[i].style is ");
       console.log(items[i].style);
+      //items[i].style = "display:none";
       //items[i].style.visibility = "hidden";
     }
   }
@@ -26,7 +27,9 @@
     <div class="topnav-right icon">
         <a href="javascript:void(0);" on:click={toggle}><i class="fa fa-bars"></i></a>
     </div>
-    <slot></slot>
+    <div on:click={closeDropdown}>
+      <slot></slot>
+  </div>
 </div>
 <style>
 
@@ -119,6 +122,7 @@
 :global(.dropdown-content a:hover) {
   background-color: var(--navbackgroundhover);
   color: var(--navforegroundhover);
+  display: block;
 }
 
 /* Show the dropdown menu when the user moves the mouse over the dropdown button */

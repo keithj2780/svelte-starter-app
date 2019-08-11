@@ -1,5 +1,5 @@
 
-<table class="table {style}">
+<table class="table" {style}>
     <slot></slot>
 </table>
 
@@ -25,8 +25,8 @@
   
   :global(td) {
     text-align: left;
-    padding: 4px;
-    border-bottom: 1px solid rgb(124, 122, 122); 
+    padding: 1px;
+    border-bottom: 2px solid rgb(124, 122, 122); 
   }
   
   :global(tr) {

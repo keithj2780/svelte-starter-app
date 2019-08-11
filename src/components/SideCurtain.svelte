@@ -1,4 +1,4 @@
-<div class="sideCurtain {style}" id="theSideCurtain">
+<div class="sideCurtain" {style} id="theSideCurtain">
     <span class="closebtn" on:click={closeCurtain}>&times;</span>
     <slot></slot>
 </div>

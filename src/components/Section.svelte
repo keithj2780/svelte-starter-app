@@ -1,4 +1,4 @@
-<div class="section {style}">
+<div class="section" {style}>
     <slot></slot>
 </div>
 

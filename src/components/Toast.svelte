@@ -1,4 +1,4 @@
-<div class="snackbar{show} {style}">
+<div class="snackbar{show}" {style}>
     <slot></slot>
 </div>
 

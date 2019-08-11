@@ -1,4 +1,4 @@
-<div class="callout{hidden} {style}">
+<div class="callout{hidden}" {style}>
         <div class="callout-header">{header}</div>
         <span class="closebtn" on:click={hide1}>×</span>
         <div class="callout-container">

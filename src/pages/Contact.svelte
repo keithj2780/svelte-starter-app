@@ -2,9 +2,11 @@
     import { onMount } from 'svelte';
 
     import Container from '../components/Container.svelte';
+    import Section from '../components/Section.svelte';
     import Form from '../components/Form.svelte';
     import StarRating from '../components/StarRating.svelte';
-    export let router = {};
+    import DatePicker from "../components/DatePicker.svelte";
+   export let router = {};
       
     // Those contains useful information about current route status
     router.path; // /test
@@ -15,6 +17,8 @@
     let lastname="";
     let message="";
     let dayRating=1;
+    let picked_date;
+    let show_date_picker = false;
 
     let controlRating;
 
@@ -63,7 +67,7 @@
                 <label for="lname">Last Name</label>
             </div>
             <div class="col-75">
-                <input type="text" bind:value={lastname} id="lname" name="lastname" value={lastname} placeholder="Your last name..">
+                <input type="text" bind:value={lastname} value={lastname} placeholder="Your last name..">
             </div>
             </div>
             <div class="row">
@@ -71,7 +75,7 @@
                 <label for="country">Country</label>
             </div>
             <div class="col-75">
-                <select id="country" name="country">
+                <select>
                 <option value="australia">Australia</option>
                 <option value="canada">Canada</option>
                 <option value="usa">USA</option>
@@ -83,7 +87,7 @@
                 <label for="message">Message</label>
             </div>
             <div class="col-75">
-                <textarea id="message" bind:value={message} name="message" value={message} placeholder="Write something.." style="height:200px"></textarea>
+                <textarea bind:value={message}  value={message} placeholder="Write something.." style="height:200px"></textarea>
             </div>
             </div>
             <div class="row">
@@ -94,6 +98,21 @@
                 {dayRating} stars is {dayRating >= 4 ? "great" : (dayRating >= 2 ? "so-so" : "not so good.. huh?")}
             </div>
             <div class="row">
+                <div class="col-25">
+                    <label for="rating">Pick a date</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" on:click={()=>show_date_picker=true} bind:value={picked_date} placeholder="Pick a date">
+                {#if show_date_picker}
+                <DatePicker
+                    format={"DD/MM/YYYY"}
+                    on:date={(event) => picked_date = event.detail.date}
+                    on:cancel={() => show_date_picker = false}
+                />
+                {/if}
+                </div>
+            </div>
+            <div class="row">
                 {#if busy}
                     <button class="button" disabled><i class="fa fa-refresh fa-spin"></i> Submitting</button>
                 {:else}
@@ -101,5 +120,9 @@
                 {/if}
             </div>
         </Form>
+        <Section></Section>
+        <Section></Section>
+        <Section></Section>
+        <Section></Section>
     </Container>
     

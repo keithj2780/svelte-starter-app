@@ -8,6 +8,7 @@
     import Chip from '../components/Chip.svelte';
     import Badge from '../components/Badge.svelte';
     import Loader from '../components/Loader.svelte';
+    import Flipper from '../components/Flipper.svelte';
 
 	import Popup from "../components/Popup.svelte";
 	import Callout from "../components/Callout.svelte";
@@ -86,7 +87,7 @@
     <Section>
         <span>
             <Chip img="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="Home" on:close="{() => loader2.show()}" closeable={true}>Berts Chip</Chip>
-            <Loader  bind:this={loader2} timeout=6000/>
+            <Loader  bind:this={loader2} timeout=1000/>
         </span>
         <Chip img="https://randomuser.me/api/portraits/thumb/women/44.jpg" alt="Home" closeable={false}>Bettys Chip</Chip>
         
@@ -119,10 +120,23 @@
     </Container>
                 
     <Section><button on:click={setTheme1}>Set Green Theme</button></Section>
+
     <Section><button on:click={toggleLoader}>Toggle Loader</button>
     <Loader bind:this={loader1}/>
     </Section>
 
+    <Section>
+        <Flipper>
+            <div slot="sideA" sideAStyle="style=background-color:red">
+                <h2>Bettys chip is below</h2>
+                <Chip img="https://randomuser.me/api/portraits/thumb/women/44.jpg" alt="Home" closeable={false}>Bettys Chip</Chip>
+            </div>
+            <div slot="sideB">
+                <h2>Geoffs chip is below</h2>
+                <Chip img="https://randomuser.me/api/portraits/thumb/men/18.jpg" alt="Home" closeable={false}>Geoffs Chip</Chip>
+            </div>
+        </Flipper>
+    </Section>
 
 </Container>
 

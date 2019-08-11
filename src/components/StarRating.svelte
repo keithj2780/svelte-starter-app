@@ -1,4 +1,4 @@
-<div class="rating {style}">
+<div class="rating" {style}>
     <input type="radio" name="rating-star" class="rating__control" id="rc1" on:click="{() => value = 1}">
     <input type="radio" name="rating-star" class="rating__control" id="rc2" on:click="{() => value = 2}">
     <input type="radio" name="rating-star" class="rating__control" id="rc3" on:click="{() => value = 3}">

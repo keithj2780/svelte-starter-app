@@ -6,7 +6,9 @@
     import Form from '../components/Form.svelte';
     import StarRating from '../components/StarRating.svelte';
     import DatePicker from "../components/DatePicker.svelte";
-   export let router = {};
+    import Counter from "../components/Counter.svelte";
+
+    export let router = {};
       
     // Those contains useful information about current route status
     router.path; // /test
@@ -17,6 +19,7 @@
     let lastname="";
     let message="";
     let dayRating=1;
+    let favNum=44;
     let picked_date = "05/08/2019";
     let show_date_picker = false;
 
@@ -90,6 +93,7 @@
                 <textarea bind:value={message}  value={message} placeholder="Write something.." style="height:200px"></textarea>
             </div>
             </div>
+
             <div class="row">
                 <div class="col-25">
                     <label for="rating">How good is your day so far?</label>
@@ -97,6 +101,16 @@
                 <StarRating id="rating" bind:this={controlRating} bind:value={dayRating}/>
                 {dayRating} stars is {dayRating >= 4 ? "great" : (dayRating >= 2 ? "so-so" : "not so good.. huh?")}
             </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="rating">Favorite Number?</label>
+                </div>
+                <div class="col-75">
+                    <span><Counter bind:count={favNum} style="margin:6px"/> Have you considered {favNum*2} ?</span>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-25">
                     <label for="rating">Pick a date</label>
@@ -112,6 +126,7 @@
                 {/if}
                 </div>
             </div>
+
             <div class="row">
                 {#if busy}
                     <button class="button" disabled><i class="fa fa-refresh fa-spin"></i> Submitting</button>

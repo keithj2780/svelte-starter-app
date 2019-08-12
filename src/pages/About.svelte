@@ -74,7 +74,7 @@
 <Container>
 
     <Section>
-        <SideTab background="rgb(255, 18, 12)">
+        <SideTab>
             <Link class="sidenavitem" href="/tabs">Tabs</Link>
             <Link class="sidenavitem" href="/table" >Table</Link>
             <Link class="sidenavitem" href="/cards">Cards</Link>

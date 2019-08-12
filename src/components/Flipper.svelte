@@ -13,12 +13,12 @@
 </div>
 
 <script>
-	let flipped = false
+	export let flipped = false
     export let style;
     export let sideAStyle;
     export let sideBStyle;
 	
-	function flip(node, {
+	export function flip(node, {
 		delay = 0,
 		duration = 500
 	}) {

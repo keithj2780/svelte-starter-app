@@ -44,7 +44,7 @@
 
   :global(.table tr:hover) {
     /* Add a grey background color to the table header and on hover */
-    background-color: #ca95a5;
+    background-color: #bcd7ee;
   }
 
 </style>

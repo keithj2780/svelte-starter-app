@@ -1,5 +1,6 @@
 <script>
     import {onMount, createEventDispatcher} from 'svelte';
+	import { Link, navigateTo } from 'svero';
 
     import Container from '../components/Container.svelte';
     import Section from '../components/Section.svelte';
@@ -9,6 +10,7 @@
     import Badge from '../components/Badge.svelte';
     import Loader from '../components/Loader.svelte';
     import Flipper from '../components/Flipper.svelte';
+    import SideTab from '../components/SideTab.svelte';
 
 	import Popup from "../components/Popup.svelte";
 	import Callout from "../components/Callout.svelte";
@@ -27,6 +29,7 @@
     let loader1;
     let loader2;
     let bLoaderVisible=false;
+    let isFlipped;
 
     let calloutComponent;
 
@@ -71,9 +74,17 @@
 <Container>
 
     <Section>
+        <SideTab background="rgb(255, 18, 12)">
+            <Link class="sidenavitem" href="/tabs">Tabs</Link>
+            <Link class="sidenavitem" href="/table" >Table</Link>
+            <Link class="sidenavitem" href="/cards">Cards</Link>
+            <Link class="sidenavitem" href="/contact">Contact</Link>
+        </SideTab>
+    </Section>
+    <Section>
     <Box>
         <h3>{name} Box Demo for {router.params.who} of {router.params.where}.</h3>
-        <p><em>(mouse over for blur effect)</em></p>
+        <p><em>(mouse over for shadow effect)</em></p>
         <p>{name} is a radical new approach to building user interfaces. Whereas traditional frameworks like React and Vue do the bulk of their work in the browser, {name} shifts that work into a compile step that happens when you build your app.</p>
         <p>Instead of using techniques like virtual DOM diffing, Svelte writes code that surgically updates the DOM when the state of your app changes.</p>
     </Box>
@@ -126,7 +137,7 @@
     </Section>
 
     <Section>
-        <Flipper>
+        <Flipper bind:flipped={isFlipped}>
             <div slot="sideA" sideAStyle="style=background-color:red">
                 <h2>Bettys chip is below</h2>
                 <Chip img="https://randomuser.me/api/portraits/thumb/women/44.jpg" alt="Home" closeable={false}>Bettys Chip</Chip>
@@ -136,6 +147,7 @@
                 <Chip img="https://randomuser.me/api/portraits/thumb/men/18.jpg" alt="Home" closeable={false}>Geoffs Chip</Chip>
             </div>
         </Flipper>
+        {isFlipped?"Side A":"SideB"}
     </Section>
 
 </Container>

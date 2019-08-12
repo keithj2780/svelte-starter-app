@@ -9,7 +9,7 @@
 <script>
     import { createEventDispatcher } from 'svelte';
 
-    export let style;
+    export let style="";
     export let img;
     export let alt;
     export let closeable = false;

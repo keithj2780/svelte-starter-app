@@ -1,14 +1,14 @@
-
-<script>
-	export let count = 0;
-	export let style = "";
-</script>
-
 <span class="counter-outer" {style}>
 	<button on:click="{(e) => { e.preventDefault(); count = count - 1}}">-</button>
 	<span class="counter-inner">{count}</span>
 	<button on:click="{(e) => {e.preventDefault(); count = count + 1}}">+</button>
 </span>
+
+
+<script>
+	export let count = 0;
+	export let style = "";
+</script>
 
 <style>
 	.counter-outer {

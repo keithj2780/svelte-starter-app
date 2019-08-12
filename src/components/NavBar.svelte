@@ -14,8 +14,8 @@
   export function closeDropdown() {
     let items = document.getElementsByClassName("dropdown-content");
     for (let i = 0; i < items.length; i++) {
-      console.log("items[i].style is ");
-      console.log(items[i].style);
+      //console.log("items[i].style is ");
+      //console.log(items[i].style);
       //items[i].style = "display:none";
       //items[i].style.visibility = "hidden";
     }

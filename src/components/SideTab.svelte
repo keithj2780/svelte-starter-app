@@ -9,14 +9,9 @@
     export let background;
 
     onMount(async () => {
-        /*
-        let main = document.querySelector(".sidenav");
-		main.style.background = background;
-		main.style.top = top;
-		*/
 
         setTimeout(function() {
-            var n=20;   //  px spacing between each tab
+            var n=40;   //  px spacing between each tab
             var elems = document.getElementsByClassName("sidenavitem");
             console.log(elems);
             for (var i = 0; i < elems.length; i++) {
@@ -41,7 +36,7 @@
   width: 80px; /* Set a specific width */
   text-decoration: none; /* Remove underline */
   font-size: 20px; /* Increase font size */
-  background-color: var(--componentbgcolor);
+  background-color: var(--navbackground);
   color: var(--textcolor);
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
   z-index:1;
@@ -51,14 +46,14 @@
   left: 0; /* default */
 }
 
-:global(a:hover) {
+:global(.sidenav a:hover) {
   left: 0; /* On mouse-over, make the elements appear as they should */
 }
 
 /* The about link: 20px from the top with a green background */
 :global(.sidenav .sidenavitem) {
   top: 20px;
-  background-color: rgb(230, 107, 91);
+  background-color: var(--navbackground);
 }
 
 </style>

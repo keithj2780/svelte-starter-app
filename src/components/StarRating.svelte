@@ -4,23 +4,23 @@
     <input type="radio" name="rating-star" class="rating__control" id="rc3" on:click="{() => value = 3}">
     <input type="radio" name="rating-star" class="rating__control" id="rc4" on:click="{() => value = 4}">
     <input type="radio" name="rating-star" class="rating__control" id="rc5" on:click="{() => value = 5}">
-    <label for="rc1" class="rating__item">
+    <label for="rc1" class="rating__item" on:mouseenter={()=>mouseEnter(1)} on:mouseleave={()=>mouseleave(1)}>
         <svg class="rating__star"><use xlink:href="#star"></use></svg>
         <span class="rating__label">1</span>
     </label>
-    <label for="rc2" class="rating__item">
+    <label for="rc2" class="rating__item" on:mouseenter={()=>mouseEnter(2)} on:mouseleave={()=>mouseleave(2)}>
         <svg class="rating__star"><use xlink:href="#star"></use></svg>
         <span class="rating__label">2</span>
     </label>
-    <label for="rc3" class="rating__item">
+    <label for="rc3" class="rating__item" on:mouseenter={()=>mouseEnter(3)} on:mouseleave={()=>mouseleave(3)}>
         <svg class="rating__star"><use xlink:href="#star"></use></svg>
         <span class="rating__label">3</span>
     </label>
-    <label for="rc4" class="rating__item">
+    <label for="rc4" class="rating__item" on:mouseenter={()=>mouseEnter(4)} on:mouseleave={()=>mouseleave(4)}>
         <svg class="rating__star"><use xlink:href="#star"></use></svg>
         <span class="rating__label">4</span>
     </label>
-    <label for="rc5" class="rating__item">
+    <label for="rc5" class="rating__item" on:mouseenter={()=>mouseEnter(5)} on:mouseleave={()=>mouseleave(5)}>
         <svg class="rating__star"><use xlink:href="#star"></use></svg>
         <span class="rating__label">5</span>
     </label>	
@@ -32,10 +32,10 @@
 </svg>
 
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, createEventDispatcher } from 'svelte';
 
-    export let label="Rating label";
     export let value;
+    export let hoveredvalue;
     export let style="";
 
 	onMount(()=>{
@@ -43,6 +43,16 @@
         setValue(value);
     });
 
+    const dispatch = createEventDispatcher();
+
+    function mouseEnter(e) {
+        dispatch('mouseenter',{value:e});
+        hoveredvalue = e;
+    }
+    function mouseleave(e) {
+        dispatch('mouseleave',{value:e});
+        hoveredvalue = 0;
+    }
     export function setValue(r) {
         value = r;
         let elem = document.getElementById("rc"+value);

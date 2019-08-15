@@ -19,6 +19,7 @@
     let lastname="";
     let message="";
     let dayRating=1;
+    let thinkingAboutRating=0;
     let favNum=44;
     let picked_date = "05/08/2019";
     let show_date_picker = false;
@@ -98,8 +99,16 @@
                 <div class="col-25">
                     <label for="rating">How good is your day so far?</label>
                 </div>
-                <StarRating id="rating" bind:this={controlRating} bind:value={dayRating}/>
-                {dayRating} stars is {dayRating >= 4 ? "great" : (dayRating >= 2 ? "so-so" : "not so good.. huh?")}
+                <div class="col-75">
+                    <span>
+                        <StarRating id="rating" bind:this={controlRating} bind:value={dayRating} bind:hoveredvalue={thinkingAboutRating}/>
+                        {dayRating} stars is {dayRating >= 4 ? "great" : (dayRating >= 2 ? "so-so" : "not so good.. huh?")}
+                        {#if thinkingAboutRating}<br />
+                            Thinking about a {thinkingAboutRating} rating ?
+                        {/if}
+                        <br />
+                    </span>
+                </div>
             </div>
 
             <div class="row">

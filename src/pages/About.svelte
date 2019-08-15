@@ -11,6 +11,7 @@
     import Loader from '../components/Loader.svelte';
     import Flipper from '../components/Flipper.svelte';
     import SideTab from '../components/SideTab.svelte';
+    import TagButton from '../components/TagButton.svelte';
 
 	import Popup from "../components/Popup.svelte";
 	import Callout from "../components/Callout.svelte";
@@ -30,6 +31,7 @@
     let loader2;
     let bLoaderVisible=false;
     let isFlipped;
+    let tagSideClicked = '';
 
     let calloutComponent;
 
@@ -72,6 +74,31 @@
 <p>Path is {router.route}</p>
 <p>Params from URL are {JSON.stringify(router.params)} and the keys are specified in the router</p>
 <Container>
+
+    <Section>
+        <TagButton 
+            lefttext='UAT'
+            leftfg='blue'
+            leftbg='rgb(5,5,5)'
+            righttext='Normal'
+            rightbg='green'
+            rightfg='rgb(55,255,55)'
+            on:click="{((side)=> tagSideClicked=side.detail)}"}
+        ></TagButton>
+        <TagButton 
+            lefttext='Production'
+            leftfg='blue'
+            leftbg='rgb(5,5,5)'
+            righttext='Alert'
+            rightbg='red'
+            rightfg='rgb(55,255,55)'
+            on:click="{(()=> toast1.showToastForMS(700))}"
+        ></TagButton>
+        {#if tagSideClicked.length}
+        {tagSideClicked} side clicked
+        {/if}<br />
+    </Section>
+
 
     <Section>
         <SideTab>

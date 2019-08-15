@@ -27,6 +27,8 @@
     let toast1;
     let toast2;
     let toast3;
+    let toastBlank;
+    let toastText;
     let loader1;
     let loader2;
     let bLoaderVisible=false;
@@ -93,7 +95,7 @@
             rightbg='red'
             rightfg='rgb(55,255,55)'
             closeable={false}
-            on:click="{(()=> toast1.showToastForMS(700))}"
+            on:click="{(()=> { toastText = 'Production Issue. Alert clicked'; toastBlank.showToastForMS(700)})}"
         ></TagButton>
         {#if tagSideClicked.length}
         {tagSideClicked} side clicked
@@ -183,4 +185,5 @@
 <Toast id='toast-1' bind:this={toast1} >This is some toast</Toast>
 <Toast id='toast-2' bind:this={toast2} ><Chip img="https://randomuser.me/api/portraits/thumb/men/79.jpg" alt="Home">Chippo</Chip></Toast>
 <Toast id='toast-3' bind:this={toast3} >Thanks for closing the Callout<br/>You're a real pal.</Toast>
+<Toast bind:this={toastBlank} text={toastText} />
 <Callout bind:this={calloutComponent} on:close="{() => toast3.showToastForMS(3000)}" header="This is a callout">Maybe you should consider a callout when you next need to ask your users if they know about cookies</Callout>

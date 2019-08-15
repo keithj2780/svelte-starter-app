@@ -1,5 +1,5 @@
 <div class="snackbar{show}" {style}>
-    <slot></slot>
+    <slot>{text}</slot>
 </div>
 
 <script>
@@ -7,6 +7,7 @@
 
     export let show="";
     export let style="";
+    export let text="";
 
 
 	const dispatch = createEventDispatcher();

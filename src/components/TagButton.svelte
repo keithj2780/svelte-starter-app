@@ -1,11 +1,11 @@
 <span class="tagbutton-outer" {style}>
     {#if closeable}
-	<button class="tagbutton-inner tagbutton-inner-left" style="background-color:{leftbg}; color:{leftfg}" on:click="{(e) => { e.preventDefault(); onclick('close')}}">×</button>
-    <button class="tagbutton-inner tagbutton-inner-center" style="background-color:{leftbg}; color:{leftfg}" on:click="{(e) => { e.preventDefault(); onclick('left')}}">{lefttext}</button>
+	<button class="tagbutton-inner tagbutton-inner-left" style="background-color:{leftbg}; color:{leftfg}" on:click="{(e) => { onclick(e,'close')}}">×</button>
+    <button class="tagbutton-inner tagbutton-inner-center" style="background-color:{leftbg}; color:{leftfg}" on:click="{(e) => { onclick(e,'left')}}">{lefttext}</button>
     {:else}
-    <button class="tagbutton-inner tagbutton-inner-left" style="background-color:{leftbg}; color:{leftfg}" on:click="{(e) => { e.preventDefault(); onclick('left')}}">{lefttext}</button>
+    <button class="tagbutton-inner tagbutton-inner-left" style="background-color:{leftbg}; color:{leftfg}" on:click="{(e) => { onclick(e,'left')}}">{lefttext}</button>
     {/if}
-	<button class="tagbutton-inner tagbutton-inner-right" style="background-color:{rightbg}; color:{rightfg}" on:click="{(e) => {e.preventDefault(); onclick('right')}}">{righttext}</button>
+	<button class="tagbutton-inner tagbutton-inner-right" style="background-color:{rightbg}; color:{rightfg}" on:click="{(e) => {onclick(e,'right')}}">{righttext}</button>
 </span>
 
 
@@ -23,7 +23,8 @@
 
     const dispatch = createEventDispatcher();
 
-    function onclick(side) {
+    function onclick(e,side) {
+        e.preventDefault();
         dispatch('click',side)
     }
 </script>

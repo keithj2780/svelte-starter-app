@@ -17,8 +17,8 @@
             for (var i = 0; i < elems.length; i++) {
                 elems[i].style.top = ""+n+'px';
                 elems[i].style.textAlign = "right";
-                elems[i].style.backgroundColor = background;
-                console.log(elems[i]);
+                //elems[i].style.backgroundColor = background;
+                //console.log(elems[i]);
                 n+=60;
             }
         },1);

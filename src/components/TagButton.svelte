@@ -1,5 +1,10 @@
 <span class="tagbutton-outer" {style}>
-	<button class="tagbutton-inner tagbutton-inner-left" style="background-color:{leftbg}; color:{leftfg}" on:click="{(e) => { e.preventDefault(); onclick('left')}}">{lefttext}</button>
+    {#if closeable}
+	<button class="tagbutton-inner tagbutton-inner-left" style="background-color:{leftbg}; color:{leftfg}" on:click="{(e) => { e.preventDefault(); onclick('close')}}">×</button>
+    <button class="tagbutton-inner tagbutton-inner-center" style="background-color:{leftbg}; color:{leftfg}" on:click="{(e) => { e.preventDefault(); onclick('left')}}">{lefttext}</button>
+    {:else}
+    <button class="tagbutton-inner tagbutton-inner-left" style="background-color:{leftbg}; color:{leftfg}" on:click="{(e) => { e.preventDefault(); onclick('left')}}">{lefttext}</button>
+    {/if}
 	<button class="tagbutton-inner tagbutton-inner-right" style="background-color:{rightbg}; color:{rightfg}" on:click="{(e) => {e.preventDefault(); onclick('right')}}">{righttext}</button>
 </span>
 
@@ -14,6 +19,7 @@
     export let leftfg="";
     export let rightfg="";
 	export let style = "";
+	export let closeable = true;
 
     const dispatch = createEventDispatcher();
 
@@ -50,6 +56,9 @@
     }
 	.tagbutton-inner-left {
 		border-radius: 5px 0px 0px 5px;
+	}
+	.tagbutton-inner-center {
+		border-radius: 0px;
 	}
 	.tagbutton-inner-right {
 		border-radius: 0px 5px 5px 0px;

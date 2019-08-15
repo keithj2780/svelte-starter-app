@@ -92,6 +92,7 @@
             righttext='Alert'
             rightbg='red'
             rightfg='rgb(55,255,55)'
+            closeable={false}
             on:click="{(()=> toast1.showToastForMS(700))}"
         ></TagButton>
         {#if tagSideClicked.length}

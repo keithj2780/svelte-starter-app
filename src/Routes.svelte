@@ -19,7 +19,7 @@
 </script>
 
 <Router>
-    <Route path="*" component={Index} />
+    <Route fallback path="*" component={Index} />
     <Route path="/login" component={Login} />
     <Route path="/contact/:firstname/:lastname/:rating" component={Contact} />
     <Route path="/table">

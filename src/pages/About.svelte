@@ -1,6 +1,7 @@
 <script>
     import {onMount, createEventDispatcher} from 'svelte';
 	import { Link, navigateTo } from 'svero';
+	import  StyledLink from '../components/StyledLink.svelte';
 
     import Container from '../components/Container.svelte';
     import Section from '../components/Section.svelte';
@@ -98,17 +99,16 @@
             on:click="{(()=> { toastText = 'Production Issue. Alert clicked'; toastBlank.showToastForMS(700)})}"
         ></TagButton>
         {#if tagSideClicked.length}
-        {tagSideClicked} side clicked
+            {tagSideClicked} side clicked
         {/if}<br />
     </Section>
 
-
     <Section>
         <SideTab>
-            <Link class="sidenavitem" href="/tabs">Tabs</Link>
-            <Link class="sidenavitem" href="/table" >Table</Link>
-            <Link class="sidenavitem" href="/cards">Cards</Link>
-            <Link class="sidenavitem" href="/contact">Contact</Link>
+            <StyledLink class="sidenavitem" href="/table" style='background-color:rgb(106, 107, 177); top:41px;' >Table</StyledLink>
+            <StyledLink class="sidenavitem" href="/contact" style='background-color:rgb(146, 206, 146); top:101px;'>Contact</StyledLink>
+            <StyledLink class="sidenavitem" href="/cards" style='background-color:rgb(212, 156, 200); top:161px;'>Cards</StyledLink>
+            <StyledLink class="sidenavitem" href="/tabs" style='background-color:rgb(212, 151, 151); top:221px;' >Tabs</StyledLink>
         </SideTab>
     </Section>
     <Section>

@@ -51,5 +51,9 @@ module.exports = {
 			filename: '[name].css'
 		})
 	],
+	devServer: {
+		historyApiFallback: true
+	},
+	
 	devtool: prod ? false: 'source-map'
 };

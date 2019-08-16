@@ -1,7 +1,7 @@
 <a {href} class={className} {style} on:click|preventDefault={onClick}><slot></slot></a>
       
 <script>
-    //  this is forked from svero package <Link>  Link.svelte
+    //  this source files is forked from svero package <Link>  Link.svelte
     import { onMount, createEventDispatcher } from 'svelte';
     import { navigateTo } from 'svero';
 

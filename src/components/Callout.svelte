@@ -43,13 +43,6 @@
         display:none;
     }
     
-    .variableLocation {
-        top:    var(--varTop);
-        bottom: var(--varBottom);
-        left:   var(--varLeft);
-        right:  var(--varRight);
-    }
-    
     .bottom-right {
         bottom: 37px;
         right: 20px;
@@ -80,32 +73,32 @@
     }
     
     .callout-header {
-        padding: 20px 15px;
+        padding: 16px 15px;
         background: #555;
-        font-size: 22px;
+        font-size: 20px;
         color: white;
-        opacity:0.6;
+        text-align:center;
         border-radius: 14px 14px 0 0;            /* top-left | top-right | bottom-right | bottom-left */
     }
     
     .callout-container {
         padding: 15px;
-        background-color: rgba(176, 213, 243, 0.5);
+        background-color: rgba(176, 213, 243, 0.95);
         color: var(--textcolor);
         border-radius: 0 0 14px 14px;        /* top-left | top-right | bottom-right | bottom-left */
     }
     
     .callout-container-no-header {
         padding: 15px;
-        background-color: rgba(176, 213, 243, 0.5);
+        background-color: rgba(176, 213, 243, 0.95);
         color: var(--textcolor);
         border-radius: 14px 14px 14px 14px;
     }
     
     .closebtn {
         position: absolute;
-        top: -20px;
-        right: -10px;
+        top: -16px;
+        right: -12px;
         color: white;
         font-size: 30px;
         cursor: pointer;

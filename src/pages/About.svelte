@@ -6,6 +6,18 @@
 <Container>
 
     <Section>
+        <RangeSlider on:change={(e)=>range=e.detail}/>
+        {range} selected<br />
+    </Section>  
+    <Section>
+        <HoverMenu isInfo={true} on:hover={() =>{console.log('hov')}}/>
+    </Section>  
+    <Section>
+        <HoverMenu items={menuItems} on:menu={(cmd)=>cmdFromHoverMenu=cmd.detail}/><br />
+        Got {cmdFromHoverMenu} from HoverMenu
+    </Section>  
+        
+    <Section>
         <TagButton 
             lefttext='UAT'
             leftfg='blue'
@@ -25,6 +37,7 @@
             closeable={false}
             on:click="{(()=> { toastText = 'Production Issue. Alert clicked'; toastBlank.showToastForMS(700)})}"
         ></TagButton>
+        <br />
         {#if tagSideClicked.length}
             {tagSideClicked} side clicked
         {/if}<br />
@@ -131,6 +144,8 @@
     import Flipper from '../components/Flipper.svelte';
     import SideTab from '../components/SideTab.svelte';
     import TagButton from '../components/TagButton.svelte';
+    import RangeSlider from '../components/RangeSlider.svelte';
+    import HoverMenu from '../components/HoverMenu.svelte';
 
 	import Popup from "../components/Popup.svelte";
 	import Callout from "../components/Callout.svelte";
@@ -153,8 +168,19 @@
     let bLoaderVisible=false;
     let isFlipped;
     let tagSideClicked = '';
+    let cmdFromHoverMenu;
+    let range;
 
     let calloutComponent;
+
+    let menuItems = [
+        {name:'Upload ',        cmd:'upload',   active:true,},
+        {name:'Download ',      cmd:'download', active:false,},
+        {name:'Save ',          cmd:'save',     active:false,},
+        {name:'New ',           cmd:'new', active:true,},
+        {name:'Toggle Info',    cmd:'toggleInfo',active:true,},
+        {name:'Other Stuff',    cmd:'more',  active:true,},
+    ];
 
     onMount(() => {
         loader1.hide();

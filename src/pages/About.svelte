@@ -1,76 +1,3 @@
-<script>
-    import {onMount, createEventDispatcher} from 'svelte';
-	import { Link, navigateTo } from 'svero';
-	import  StyledLink from '../components/StyledLink.svelte';
-
-    import Container from '../components/Container.svelte';
-    import Section from '../components/Section.svelte';
-    import Box from '../components/Box.svelte';
-    import Toast from '../components/Toast.svelte';
-    import Chip from '../components/Chip.svelte';
-    import Badge from '../components/Badge.svelte';
-    import Loader from '../components/Loader.svelte';
-    import Flipper from '../components/Flipper.svelte';
-    import SideTab from '../components/SideTab.svelte';
-    import TagButton from '../components/TagButton.svelte';
-
-	import Popup from "../components/Popup.svelte";
-	import Callout from "../components/Callout.svelte";
-    
-    export let router = {};
-  
-    // Those contains useful information about current route status
-    router.path;
-    router.route
-    router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
-
-    let name = 'Svelte';
-    let toast1;
-    let toast2;
-    let toast3;
-    let toastBlank;
-    let toastText;
-    let loader1;
-    let loader2;
-    let bLoaderVisible=false;
-    let isFlipped;
-    let tagSideClicked = '';
-
-    let calloutComponent;
-
-    onMount(() => {
-        loader1.hide();
-        loader2.hide();
-    });
-
-	export function doShowCallout() {
-		calloutComponent.show();
-	}
-
-    export function setTheme1(col) {
-        let colBG = 'rgb(82, 171, 53)';
-        let colText = 'rgb(10,150,21)';
-        let colBody = 'rgb(170,225,158)';
-        let items = document.getElementsByTagName("body");
-        if (items[0]) {
-            items[0].style.setProperty('--body-color', colBody);
-            items[0].style.setProperty('--textcolor', colText);
-            items[0].style.setProperty('--componentbgcolor', colBG);      //  these CSS vars are in global.css
-        }
-    }
-    function toggleLoader() {
-        bLoaderVisible = !bLoaderVisible;
-        if (bLoaderVisible) loader1.show();
-        else loader1.hide();
-    }
-
-</script>
-
-<style>
-	h1 {
-		color: brown;
-	}
-</style>
 
 <h1>About {name}!</h1>
 <p>Route is {router.path}</p>
@@ -188,3 +115,77 @@
 <Toast id='toast-3' bind:this={toast3} >Thanks for closing the Callout<br/>You're a real pal.</Toast>
 <Toast bind:this={toastBlank} text={toastText} />
 <Callout bind:this={calloutComponent} on:close="{() => toast3.showToastForMS(3000)}" header="This is a callout">Maybe you should consider a callout when you next need to ask your users if they know about cookies</Callout>
+
+<script>
+    import {onMount, createEventDispatcher} from 'svelte';
+	import { Link, navigateTo } from 'svero';
+	import  StyledLink from '../components/StyledLink.svelte';
+
+    import Container from '../components/Container.svelte';
+    import Section from '../components/Section.svelte';
+    import Box from '../components/Box.svelte';
+    import Toast from '../components/Toast.svelte';
+    import Chip from '../components/Chip.svelte';
+    import Badge from '../components/Badge.svelte';
+    import Loader from '../components/Loader.svelte';
+    import Flipper from '../components/Flipper.svelte';
+    import SideTab from '../components/SideTab.svelte';
+    import TagButton from '../components/TagButton.svelte';
+
+	import Popup from "../components/Popup.svelte";
+	import Callout from "../components/Callout.svelte";
+    
+    export let router = {};
+  
+    // Those contains useful information about current route status
+    router.path;
+    router.route
+    router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
+
+    let name = 'Svelte';
+    let toast1;
+    let toast2;
+    let toast3;
+    let toastBlank;
+    let toastText;
+    let loader1;
+    let loader2;
+    let bLoaderVisible=false;
+    let isFlipped;
+    let tagSideClicked = '';
+
+    let calloutComponent;
+
+    onMount(() => {
+        loader1.hide();
+        loader2.hide();
+    });
+
+	export function doShowCallout() {
+		calloutComponent.show();
+	}
+
+    export function setTheme1(col) {
+        let colBG = 'rgb(82, 171, 53)';
+        let colText = 'rgb(10,150,21)';
+        let colBody = 'rgb(170,225,158)';
+        let items = document.getElementsByTagName("body");
+        if (items[0]) {
+            items[0].style.setProperty('--body-color', colBody);
+            items[0].style.setProperty('--textcolor', colText);
+            items[0].style.setProperty('--componentbgcolor', colBG);      //  these CSS vars are in global.css
+        }
+    }
+    function toggleLoader() {
+        bLoaderVisible = !bLoaderVisible;
+        if (bLoaderVisible) loader1.show();
+        else loader1.hide();
+    }
+
+</script>
+
+<style>
+	h1 {
+		color: brown;
+	}
+</style>

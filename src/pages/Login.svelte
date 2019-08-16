@@ -59,8 +59,8 @@
     });
     function handleSubmit (e) {
         e.preventDefault();
-        console.log('Got submit');
-        console.log(e);
+        //console.log('Got submit');
+        //console.log(e);
         busy = true;
     }
 </script>

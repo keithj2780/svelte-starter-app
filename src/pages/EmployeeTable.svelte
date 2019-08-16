@@ -1,32 +1,3 @@
-<script>
-    import Table from '../components/Table.svelte';
-    import Container from '../components/Container.svelte';
-    import { onMount } from 'svelte';
-    
-    export let router = {};
-        
-        // Those contains useful information about current route status
-        router.path; // /test
-        router.route; // Route Object
-        router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
-    
-        export let employees;
-        let empId=0;
-    
-    onMount(() => {
-        //for (let i=0;i<employees.length;i++) employees[i].id = i;
-        console.log(employees[0]);
-    });
-    
-</script>
-    
-<style>
-    h1 {
-        color: grey;
-    }
-    
-</style>
-
 <Container>
     <h1>Employee Table</h1>
     <p>We have loads of great rows full of ace Employees.</p>
@@ -51,3 +22,33 @@
         {/each}
     </Table>
 </Container>
+    
+<script>
+    import Table from '../components/Table.svelte';
+    import Container from '../components/Container.svelte';
+    import { onMount } from 'svelte';
+    
+    export let router = {};
+        
+        // Those contains useful information about current route status
+        router.path; // /test
+        router.route; // Route Object
+        router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
+    
+        export let employees;
+        let empId=0;
+    
+    onMount(() => {
+        //for (let i=0;i<employees.length;i++) employees[i].id = i;
+        //console.log(employees[0]);
+    });
+    
+</script>
+    
+<style>
+    h1 {
+        color: grey;
+    }
+    
+</style>
+

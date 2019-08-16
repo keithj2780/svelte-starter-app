@@ -52,8 +52,13 @@ module.exports = {
 		})
 	],
 	devServer: {
-		historyApiFallback: true
+		historyApiFallback: {
+		  rewrites: [
+			{ from: /^\/$/, to: '/index.html' },
+			{ from: /./, to: '/index.html' }
+		  ]
+		}
 	},
-	
+		
 	devtool: prod ? false: 'source-map'
 };

@@ -1,9 +1,14 @@
-<div class="badge" {style}>
+<div class="badge" {style} on:click="{()=> dispatch('click')}">
     <slot></slot>
 </div>
 
 <script>
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
+
   export let style;
+
 </script>
 
 <style>

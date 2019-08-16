@@ -1,12 +1,12 @@
 <div class="card-container" {style} on:click={() => flipped = !flipped}>
 	<div class="card">
 		{#if flipped}
-		<div class="side" {sideBStyle} transition:flip>
-			<slot name="sideA"></slot>
+		<div class="side back" style={sideBStyle} transition:flip>
+			<slot name="sideB"></slot>
 		</div>
 		{:else}
-		<div class="side back" {sideBStyle} transition:flip>
-            <slot name="sideB"></slot>
+		<div class="side " style={sideAStyle} transition:flip>
+            <slot name="sideA"></slot>
         </div>
 		{/if}
 	</div>
@@ -15,8 +15,8 @@
 <script>
 	export let flipped = false
     export let style;
-    export let sideAStyle;
-    export let sideBStyle;
+    export let sideAStyle="";
+    export let sideBStyle="";
 	
 	export function flip(node, {
 		delay = 0,

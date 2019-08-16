@@ -77,7 +77,7 @@
 
     <Container>
         <div class="badgeContainer">
-        <span><Badge>Recommended</Badge></span>
+        <span><Badge on:click={() => console.log('badge clicked')}>Recommended</Badge></span>
         <Popup popuptext="Great hovering" tooltip=true>
             <Box>Tooltip Demo happens for 3 secs if you hover over this box</Box>
         </Popup>
@@ -108,14 +108,16 @@
     </Section>
 
     <Section>
-        <Flipper bind:flipped={isFlipped}>
-            <div slot="sideA" sideAStyle="style=background-color:red">
+        <Flipper bind:flipped={isFlipped}  sideAStyle="background-color:red" sideBStyle="background-color:blue">
+            <div slot="sideA">
                 <h2>Bettys chip is below</h2>
                 <Chip img="https://randomuser.me/api/portraits/thumb/women/44.jpg" alt="Home" closeable={false}>Bettys Chip</Chip>
+                <p>Betty has a red car</p>
             </div>
             <div slot="sideB">
                 <h2>Geoffs chip is below</h2>
                 <Chip img="https://randomuser.me/api/portraits/thumb/men/18.jpg" alt="Home" closeable={false}>Geoffs Chip</Chip>
+                <p>Geoff has a blue dog</p>
             </div>
         </Flipper>
         {isFlipped?"Side A":"SideB"}

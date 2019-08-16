@@ -81,7 +81,7 @@
 	</div>
 	<Link href="/contact">Contact</Link>
 	<div class="topnav-right">
-		<Link href="/about/Dorothy/Kansas">Misc</Link>
+		<Link href="/about">Misc</Link>
 		<Link href="/login"><i class="fa fa-sign-in"></i></Link>
 	</div>
 </NavBar>
@@ -94,7 +94,7 @@
 </Hero>
 
 <SideCurtain bind:this={sideSlider}>
-	<Link href="/about" on:click={doCloseCurtain}>Misc</Link>
+	<Link href="/about/Dorothy/Kansas" on:click={doCloseCurtain}>Misc</Link>
 	<Link href="/contact" on:click={doCloseCurtain}>Contact</Link>
 	<Container>
 		<Chip img="https://randomuser.me/api/portraits/thumb/men/51.jpg" alt="Random Dude"> Chippy</Chip>

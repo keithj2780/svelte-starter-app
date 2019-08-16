@@ -1,19 +1,23 @@
-<div class="card" {style}>
+<div class="card" {style}  on:click="{()=>dispatch('click')}">
     <img src={img} alt={title}>
     <div class="container">
         <h2>{title}</h2>
         <p class="title">{subtitle}</p>
         <slot></slot>
-        <p><button class="button"><i class="fa fa-phone"></i> Contact </button></p>
+        <p><button class="button" on:click="{(e)=>{dispatch('contact');e.stopPropagation();}}"><i class="fa fa-phone"></i> Contact </button></p>
     </div>
 </div>
 
 <script>
-    export let style;
-    export let title;
-    export let subtitle;
-    export let img;
-    
+  import { createEventDispatcher } from 'svelte';
+
+  export let style;
+  export let title;
+  export let subtitle;
+  export let img;
+
+  const dispatch = createEventDispatcher();
+  
 </script>
 
 <style>

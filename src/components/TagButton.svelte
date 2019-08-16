@@ -14,10 +14,13 @@
 
     export let righttext="";
 	export let lefttext="";
+
     export let leftbg="";
-    export let rightbg="";
+	export let rightbg="";
+	
     export let leftfg="";
-    export let rightfg="";
+	export let rightfg="";
+	
 	export let style = "";
 	export let closeable = true;
 

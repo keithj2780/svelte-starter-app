@@ -1,7 +1,7 @@
 <Container>
     <h1>Employee Table</h1>
     <p>We have loads of great rows full of ace Employees.</p>
-    <Table id="myTable">
+    <Table>
         <tr class="header">
             <th style="width:5%;">Row</th>
             <th style="width:20%;">Name</th>
@@ -11,7 +11,7 @@
             <th style="width:20%;">TZ</th>
         </tr>
         {#each employees as emp, i}
-        <tr>
+        <tr on:click="{()=>handleClick(i)}">
                 <td>{i+1}</td>
                 <td>{emp.name.first+" "+emp.name.last}</td>
                 <td><i class="fa fa-envelope"></i> {emp.email}</td>
@@ -42,7 +42,9 @@
         //for (let i=0;i<employees.length;i++) employees[i].id = i;
         //console.log(employees[0]);
     });
-    
+    function handleClick(e) {
+        console.log('got click on row '+e);
+    }
 </script>
     
 <style>

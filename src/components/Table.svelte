@@ -9,14 +9,14 @@
 
 <style>
   table.table {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full-width */
-    border: 1px solid rgb(51, 48, 48); /* Add a grey border */
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid rgb(51, 48, 48);
     font-size: 14px;
-    overflow-x:auto;    /* responsive */
+    overflow-x:auto;
     background-color: #a8c5d8;
   }
-  
+
   :global(.table th) {
     text-align: center;
     padding: 12px;

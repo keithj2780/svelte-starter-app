@@ -69,7 +69,7 @@
     <Section>
         <span>
             <Chip img="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="Home" on:close="{() => loader2.show()}" closeable={true}>Berts Chip</Chip>
-            <Loader  bind:this={loader2} timeout=1000/>
+            <Loader  bind:this={loader2} modal={true} timeout=4000/>
         </span>
         <Chip img="https://randomuser.me/api/portraits/thumb/women/44.jpg" alt="Home" closeable={false}>Bettys Chip</Chip>
         

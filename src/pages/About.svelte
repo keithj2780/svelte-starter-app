@@ -27,7 +27,7 @@
             rightfg='rgb(55,255,55)'
             on:click="{((side)=> tagSideClicked=side.detail)}"}
         ></TagButton>
-        <TagButton 
+        <TagButton
             lefttext='Production'
             leftfg='blue'
             leftbg='rgb(5,5,5)'
@@ -35,7 +35,7 @@
             rightbg='red'
             rightfg='rgb(55,255,55)'
             closeable={false}
-            on:click="{(()=> { toastText = 'Production Issue. Alert clicked'; toastBlank.showToastForMS(700)})}"
+            on:click="{(()=> { toastText = 'Production Issue. Alert clicked'; toastBlank.showToastForMS(3000)})}"
         ></TagButton>
         <br />
         {#if tagSideClicked.length}

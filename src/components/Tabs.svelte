@@ -55,8 +55,8 @@
   transition: 0.3s;
   margin: 0px;
   color: rgb(78, 74, 74);
-  border: 1px solid var(--background);
-  border-radius: 3px;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
 }
 
 /* Change background color of buttons on hover */
@@ -71,7 +71,7 @@
   border-left: 1px solid rgb(114, 16, 16);
   border-right: 1px solid rgb(114, 16, 16);
   border-bottom: 1px solid var(--active);
-  border-radius: 1px;
+  border-radius: 5px 5px 0 0;
 }
 
 /* Style the tab content */

@@ -82,16 +82,14 @@
 
         <div class="row">
             {#if busy}
-                <button class="button" disabled><i class="fa fa-refresh fa-spin"></i> Submitting</button>
+            <button class="button" style="margin:12px" disabled><i class="fa fa-refresh fa-spin"></i> Submitting</button>
+            <button class="button" style="margin:12px" disabled>Cancel</button>
             {:else}
-                <button class="button" on:click={handleSubmit}>Submit</button>
+            <button class="button" style="margin:12px" on:click={handleSubmit}>Submit</button>
+            <button class="button" style="margin:12px" >Cancel</button>
             {/if}
         </div>
     </Form>
-    <Section></Section>
-    <Section></Section>
-    <Section></Section>
-    <Section></Section>
 </Container>
     
 

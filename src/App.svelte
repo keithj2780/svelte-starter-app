@@ -93,7 +93,7 @@
 	<p>The compact, ultra fast non-framework!</p>
 </Hero>
 
-<SideCurtain bind:this={sideSlider}>
+<SideCurtain bind:this={sideSlider} divToSlide="main">
 	<Link href="/about/Dorothy/Kansas" on:click={doCloseCurtain}>Misc</Link>
 	<Link href="/contact" on:click={doCloseCurtain}>Contact</Link>
 	<Container>

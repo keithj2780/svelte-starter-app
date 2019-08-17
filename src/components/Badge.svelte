@@ -7,7 +7,7 @@
 
   const dispatch = createEventDispatcher();
 
-  export let style;
+  export let style="";
 
 </script>
 

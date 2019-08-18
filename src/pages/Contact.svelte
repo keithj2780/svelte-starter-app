@@ -46,9 +46,10 @@
             <div class="col-75">
                 <span>
                     <StarRating id="rating" bind:this={controlRating} bind:value={dayRating} bind:hoveredvalue={thinkingAboutRating}/>
-                    {dayRating} stars is {dayRating >= 4 ? "great" : (dayRating >= 2 ? "so-so" : "not so good.. huh?")}
-                    {#if thinkingAboutRating}<br />
+                    {#if thinkingAboutRating}
                         Thinking about a {thinkingAboutRating} rating ?
+                    {:else}
+                        {dayRating} stars is {dayRating >= 4 ? "great" : (dayRating >= 2 ? "so-so" : "not so good.. huh?")}
                     {/if}
                     <br />
                 </span>
@@ -69,7 +70,7 @@
                 <label for="rating">Pick a date</label>
             </div>
             <div class="col-75">
-                <input type="text" on:click={()=>show_date_picker=true} bind:value={picked_date} placeholder="Pick a date">
+                <input type="text" on:click={()=>show_date_picker=!show_date_picker} bind:value={picked_date} placeholder="Pick a date">
             {#if show_date_picker}
             <DatePicker
                 format={"DD/MM/YYYY"}

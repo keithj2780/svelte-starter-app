@@ -12,7 +12,7 @@
 
 <style>
 	.counter-outer {
-		background: var(--componentbgcolor);
+		background: white;	/*var(--componentbgcolor);*/
 		height: 20px;
 		font-size: var(--componentfontsize);
 		display: inline-flex;
@@ -21,6 +21,7 @@
 		transform: translateY(-1px);
 		margin: 0 5px;
 		border-radius: 3px;
+		border: 5px red;
 		width: 65px;
 		box-shadow: 0 3px 15px 1px rgba(0,0,0,0.3)
 	}

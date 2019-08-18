@@ -12,6 +12,7 @@
     });
 
     let carousel;
+    let max = 4;
 
 </script>
 <style>
@@ -22,22 +23,29 @@
     
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
+                    <div class="numbertext">1 / {max}</div>
                     <img src="https://picsum.photos/id/100/2500/1656" style="width:100%" alt="">
                     <div class="text">Caption Text</div>
                 </div>
                 
                 <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
+                    <div class="numbertext">2 / {max}</div>
                     <img src="https://picsum.photos/id/1001/5616/3744" style="width:100%" alt="">
                     <div class="text">Caption Two</div>
                 </div>
                 
                 <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
+                    <div class="numbertext">3 / {max}</div>
                     <img src="https://picsum.photos/id/10/2500/1667" style="width:100%" alt="">
                     <div class="text">Caption Three</div>
                 </div>
+
+                <div class="mySlides fade">
+                        <div class="numbertext">4 / {max}</div>
+                        <img src="img/world.svg" style="width:100%" alt="">
+                        <div class="text">SVG World</div>
+                    </div>
+
                 
                 <!-- Next and previous buttons -->
                 <a class="prev" on:click="{() => carousel.plusSlides(-1)}">&#10094;</a>
@@ -50,6 +58,7 @@
                 <span class="dot active" on:click="{() => carousel.currentSlide(1)}"></span> 
                 <span class="dot" on:click="{() => carousel.currentSlide(2)}"></span> 
                 <span class="dot" on:click="{() => carousel.currentSlide(3)}"></span> 
+                <span class="dot" on:click="{() => carousel.currentSlide(4)}"></span> 
             </div>
         
 

@@ -5,7 +5,7 @@
 
 <script>
   export let style="";
-  //export let width="250px";
+  export let width="250px";
   export let divToSlide;
   let expand="";
 
@@ -16,6 +16,7 @@
     if (divToSlide && document.getElementById(divToSlide))
       document.getElementById(divToSlide).style.marginLeft = width;   //  slide all of body across too
   }
+  
   export function closeCurtain() {
     expand="";
     //document.getElementsByClassName("sideCurtain")[0].style.width = "0";

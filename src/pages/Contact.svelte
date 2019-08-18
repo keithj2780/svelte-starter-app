@@ -3,32 +3,52 @@
 <Container>
     <Form>
         <div class="row">
-        <div class="col-25">
-            <label for="fname">First Name</label>
+            <div class="col-25">
+                <label for="fname">Hobbies</label>
+            </div>
+            <div class="col-75">
+                <Checkbox label="" value={cbValue} bind:checked={cbValue}></Checkbox>
+            </div>
         </div>
-        <div class="col-75">
-            <input type="text" bind:value={firstname} id="fname" name="firstname" value={firstname} placeholder="Your name..">
-        </div>
-        </div>
+    
         <div class="row">
-        <div class="col-25">
-            <label for="lname">Last Name</label>
+            <div class="col-25">
+                <label for="fname">Interests</label>
+            </div>
+            <div class="col-75">
+                <Checkbox label="" value={cbValue2} bind:checked={cbValue2}></Checkbox>
+            </div>
         </div>
-        <div class="col-75">
-            <input type="text" bind:value={lastname} value={lastname} placeholder="Your last name..">
-        </div>
-        </div>
+    
         <div class="row">
-        <div class="col-25">
-            <label for="country">Country</label>
+            <div class="col-25">
+                <label for="fname">First Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" bind:value={firstname} id="fname" name="firstname" value={firstname} placeholder="Your name..">
+            </div>
         </div>
-        <div class="col-75">
-            <select>
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-            </select>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Last Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" bind:value={lastname} value={lastname} placeholder="Your last name..">
+            </div>
         </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="country">Country</label>
+            </div>
+            <div class="col-75">
+                <select>
+                    <option value="au">Australia</option>
+                    <option value="ca">Canada</option>
+                    <option value="us">USA</option>
+                </select>
+            </div>
         </div>
         <div class="row">
         <div class="col-25">
@@ -116,6 +136,7 @@
     import DatePicker from "../components/DatePicker.svelte";
     import Counter from "../components/Counter.svelte";
     import Accordian from "../components/Accordian.svelte";
+    import  Checkbox from "../components/Checkbox.svelte";
 
     export let router = {};
       
@@ -124,6 +145,8 @@
     router.route; // Route Object
     router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
 
+    let cbValue=false;
+    let cbValue2=true;
     let firstname="";
     let lastname="";
     let message="";
@@ -137,6 +160,9 @@
     let controlRating;
 
     let busy = false;
+    
+    $: console.log("cbValue changed to "+cbValue);
+    $: console.log("cbValue2 changed to "+cbValue2);
 
     onMount(() => {
         busy = false;

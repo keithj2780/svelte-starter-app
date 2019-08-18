@@ -11,7 +11,6 @@
 </script>
 
 <style>
-/* Style inputs, select elements and textareas */
 :global(.form input[type=text]), 
 :global(.form input[type=password]), 
 :global(.form select),
@@ -32,7 +31,6 @@
   outline:0;
 }
 
-/* Style the label to display next to the inputs */
 :global(.form label) {
   padding: 6px 12px 6px 0;
   display: block;
@@ -42,13 +40,13 @@
   text-align:right;
 }
 
-/* Style the submit button */
 :global(.form button) {
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   float: right;
+  margin:16px;
 }
 
 /* Style the container */

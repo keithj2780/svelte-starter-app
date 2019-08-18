@@ -3,7 +3,7 @@
     <Container>
         <!-- Modal Content -->
         <Form className="animate">
-            <div class="row">
+            <div class="row" style="width:1%; margin:auto;">                
                 <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar">
             </div>
 
@@ -25,11 +25,9 @@
             </div>
         
             <div class="row">
-                <span>
+                <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
                     <button type="submit">Login</button>&nbsp;
-                    <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
                     <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                </span>
             </div>
             <div class="row">
                 Forgot <a href="/">password?</a>

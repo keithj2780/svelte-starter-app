@@ -12,7 +12,10 @@
 
 <style>
 /* Style inputs, select elements and textareas */
-:global(.form input[type=text]), :global(.form select), :global(.form textarea) {
+:global(.form input[type=text]), 
+:global(.form input[type=password]), 
+:global(.form select),
+:global(.form textarea) {
   width: 100%;
   padding: 5px;
   border: 1px solid rgb(219, 219, 219);

@@ -82,6 +82,18 @@
         </div>
 
         <div class="row">
+            <Accordian header="Supplementary Info">
+                <div class="col-25">
+                    <label for="message">Bonus Info goes here</label>
+                </div>
+                <div class="col-75">
+                    <textarea bind:value={message2}  value={message2} placeholder="Write something else .." style="height:200px"></textarea>
+                </div>
+                
+            </Accordian>
+        </div>
+
+        <div class="row">
             {#if busy}
             <button class="button" style="margin:12px" disabled><i class="fa fa-refresh fa-spin"></i> Submitting</button>
             <button class="button" style="margin:12px" disabled>Cancel</button>
@@ -103,6 +115,7 @@
     import StarRating from '../components/StarRating.svelte';
     import DatePicker from "../components/DatePicker.svelte";
     import Counter from "../components/Counter.svelte";
+    import Accordian from "../components/Accordian.svelte";
 
     export let router = {};
       
@@ -114,6 +127,7 @@
     let firstname="";
     let lastname="";
     let message="";
+    let message2="";
     let dayRating=1;
     let thinkingAboutRating=0;
     let favNum=44;

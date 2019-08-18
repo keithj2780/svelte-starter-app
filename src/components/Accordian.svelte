@@ -1,15 +1,18 @@
 <button class="collapsible {bShowContent?'minusIcon':''}" on:click|preventDefault="{() => bShowContent = !bShowContent}">
     {header}
 </button>
-<div class="content {bShowContent?'showContent':''}" >
+{#if bShowContent}
+<div    class="content" transition:scale="{{duration: 500, delay: 50, opacity: 0.2, start: 0.1}}">
   <slot></slot>
 </div>
+{/if}
 
 <script>
+    import { scale } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
+
     export let bShowContent = false;
     export let header = "";
-    //  {bShowContent?"showContent":""}
-    //  on:click="{bShowContent = !bShowContent}"
 </script>
 
 <style>
@@ -34,13 +37,9 @@
   padding: 0 18px;
   background-color: white;
   max-height: 0;
-  display:none;
   overflow: hidden;
-}
-
-.showContent {
-    display:block;
-    max-height: 100%;
+  display:block;
+  max-height: 100%;
 }
 
 .collapsible:after {

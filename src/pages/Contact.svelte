@@ -4,19 +4,29 @@
     <Form>
         <div class="row">
             <div class="col-25">
-                <label for="fname">Hobbies</label>
+                <label>Toggling</label>
             </div>
             <div class="col-75">
-                <Checkbox label="" value={cbValue} bind:checked={cbValue}></Checkbox>
+                <ToggleButton label="" value={toggleValue} bind:checked={toggleValue}></ToggleButton>{toggleValue}
             </div>
         </div>
     
         <div class="row">
             <div class="col-25">
-                <label for="fname">Interests</label>
+                <label>Hobbies</label>
             </div>
             <div class="col-75">
-                <Checkbox label="" value={cbValue2} bind:checked={cbValue2}></Checkbox>
+                <Checkbox label="" value={cbValue} bind:checked={cbValue}></Checkbox>{cbValue}
+            </div>
+        </div>
+    
+    
+        <div class="row">
+            <div class="col-25">
+                <label>Interests</label>
+            </div>
+            <div class="col-75">
+                <Checkbox label="" value={cbValue2} bind:checked={cbValue2}></Checkbox>{cbValue2}
             </div>
         </div>
     
@@ -40,6 +50,16 @@
 
         <div class="row">
             <div class="col-25">
+                <label>Password</label>
+            </div>
+            <div class="col-75">
+                <input type="password" bind:value={pw} value={pw} placeholder="An easy to guess password please..">
+            </div>
+        </div>
+    
+    
+        <div class="row">
+            <div class="col-25">
                 <label for="country">Country</label>
             </div>
             <div class="col-75">
@@ -50,14 +70,16 @@
                 </select>
             </div>
         </div>
+
         <div class="row">
-        <div class="col-25">
-            <label for="message">Message</label>
+            <div class="col-25">
+                <label for="message">Message</label>
+            </div>
+            <div class="col-75">
+                <textarea bind:value={message}  value={message} placeholder="Write something.." style="height:200px"></textarea>
+            </div>
         </div>
-        <div class="col-75">
-            <textarea bind:value={message}  value={message} placeholder="Write something.." style="height:200px"></textarea>
-        </div>
-        </div>
+
 
         <div class="row">
             <div class="col-25">
@@ -78,7 +100,7 @@
 
         <div class="row">
             <div class="col-25">
-                <label for="rating">Favorite Number?</label>
+                <label>Favorite Number?</label>
             </div>
             <div class="col-75">
                 <span><Counter bind:count={favNum} style="margin:6px"/> Have you considered {favNum*2} ?</span>
@@ -136,7 +158,9 @@
     import DatePicker from "../components/DatePicker.svelte";
     import Counter from "../components/Counter.svelte";
     import Accordian from "../components/Accordian.svelte";
-    import  Checkbox from "../components/Checkbox.svelte";
+    import Checkbox from "../components/Checkbox.svelte";
+    import ToggleButton from "../components/ToggleButton.svelte";
+    
 
     export let router = {};
       
@@ -145,10 +169,12 @@
     router.route; // Route Object
     router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
 
+    let toggleValue=false;
     let cbValue=false;
     let cbValue2=true;
     let firstname="";
     let lastname="";
+    let pw="";
     let message="";
     let message2="";
     let dayRating=1;
@@ -163,6 +189,7 @@
     
     $: console.log("cbValue changed to "+cbValue);
     $: console.log("cbValue2 changed to "+cbValue2);
+    $: console.log("toggleValue changed to "+toggleValue);
 
     onMount(() => {
         busy = false;

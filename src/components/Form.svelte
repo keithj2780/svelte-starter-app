@@ -25,7 +25,10 @@
   background-color:#fff;
 }
 
-:global(.form input[type=text]:focus), :global(.form select:focus), :global(.form textarea:focus) {
+:global(.form input[type=text]:focus), 
+:global(input[type=password]:focus), 
+:global(.form select:focus), 
+:global(.form textarea:focus) {
   border-color: #3273dc;
   box-shadow: 0 0 0 0.125em rgb(50,115,220,0.5);
   outline:0;

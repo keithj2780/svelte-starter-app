@@ -9,7 +9,7 @@
 
 <script>
     import { scale } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	  import { quintOut } from 'svelte/easing';
 
     export let bShowContent = false;
     export let header = "";

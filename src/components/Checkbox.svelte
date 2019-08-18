@@ -82,7 +82,7 @@
 .main:checked + .inside-label span:first-child {
   background: var(--buttonbgcolor);
   border-color: var(--buttonbgcolor);
-  animation: myAnimation 0.4s ease;
+  animation: myAnimation 0.2s ease;
 }
 .main:checked + .inside-label span:first-child svg {
   stroke-dashoffset: 0;

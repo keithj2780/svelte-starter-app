@@ -16,6 +16,7 @@
     let hours = "";
     let minutes = "";
     let weeks = {};
+    let week_numbers = {};
     let cancel_btn;
 
     if (months.length !== 12) {
@@ -237,20 +238,29 @@
     // month.
     $: {
         weeks = {};
+        week_numbers = [];
+        let last_week = -1;
         this_month_days.forEach((day) => {
             const week_number = `${day.getWeek()}`;
             if (!Object.keys(weeks).includes(week_number)) {
                 weeks[week_number] = [];
             }
+            if (week_number != last_week) {
+                week_numbers.push(week_number);
+                last_week = week_number;
+            }
             weeks[week_number].push(day);
         });
+        console.log(week_numbers);
+        console.log(weeks);
     }
 </script>
 
 <div class="datepicker">
     <div class="header">
+        <span class="prev  prevyear chevron" on:click={()=>year--}>&laquo;</span>
         <div class="prev" on:click={dec_month}>
-            <span class="chevron">&#8249;</span>
+            <span class="chevron">&lsaquo;</span>
             <span class="month">
                 {months[(month > 0 ? month - 1 : 11) % months.length].substring(0, 3)}
             </span>
@@ -260,8 +270,9 @@
             <span class="month">
                 {months[(month + 1) % months.length].substring(0, 3)}
             </span>
-            <span class="chevron">&#x203a;</span>
+            <span class="chevron">&rsaquo;</span>
         </div>
+        <span class="next nextyear chevron" on:click={()=>year++}>&raquo;</span>
     </div>
     <table>
         <thead>
@@ -277,7 +288,7 @@
             </tr>
         </thead>
         <tbody>
-            {#each Object.keys(weeks) as week_number}
+            {#each week_numbers as week_number}
                 <tr class="week">
                     {#if month !== 11 || week_number !== "1"}
                         <td class="week-number">{week_number}</td>
@@ -318,7 +329,8 @@
                     {/if}
                 </tr>
             {/each}
-            {#if month === 11}
+            <!-- handle the last week in Dec overflowing into week 1 of the next year -->
+            {#if month === 11 && weeks["1"]}
                 <td class="week-number">1</td>
                 {#each weeks["1"] as date}
                     <td
@@ -387,6 +399,8 @@
             width: 315px;
             background-color: white;
             box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.3);
+            position:absolute;
+            z-index:1;
     }
 
     .datepicker .header {
@@ -394,11 +408,11 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 5px;
-            font-size: 18px;
+            font-size: var(--navfontsize);
             text-transform: uppercase;
-            color: white;
+            color: var(--navforeground);
             font-weight: bold;
-            background-color: #0681ff;
+            background-color: var(--navbackground);
     }
 
     .datepicker .header .next,
@@ -409,20 +423,26 @@
             justify-content: center;
             transition: color 0.15s linear;
             font-size: 14px;
-            width: 55px;
+            width: 35px;
             padding: 0 10px;
             height: 40px;
     }
 
+    .datepicker .header .nextyear,
+    .datepicker .header .prevyear {
+            width: 15px;
+    }
+
+
     .datepicker .header .next:hover,
     .datepicker .header .prev:hover {
-            background-color: #0068d2;
+            background-color: var(--navbackgroundhover);
     }
 
     .datepicker .header .next .chevron,
     .datepicker .header .prev .chevron {
             margin-top: -4px;
-            font-size: 22px;
+            font-size: 14px;
     }
 
     .datepicker .header .next {
@@ -477,8 +497,8 @@
 
     .datepicker table td:not(.week-number):hover,
     .datepicker table td:not(.week-number).picked {
-            background-color: #0681ff;
-            color: white; 
+            background-color: var(--navbackgroundhover);
+            color: var(--navforegroundhover); 
     }
 
    .datepicker table td:not(.week-number).disabled:not(.picked):not(.today) {

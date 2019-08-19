@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" {style}>
     <div class="col-25">
         <label>{label}</label>
     </div>
@@ -9,6 +9,7 @@
 
 <script>
     export let label="";
+    export let style="";
 </script>
 
 <style>

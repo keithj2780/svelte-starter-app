@@ -1,6 +1,6 @@
 <script>
-    import Container from "../components/Container.svelte";
-    import Box from "../components/Box.svelte";
+    import {Box, Container} from "../components/index.js";
+
 </script>
 
 <style>

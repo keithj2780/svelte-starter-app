@@ -21,9 +21,9 @@
 </Container>
 
 <script>
-    import Container from '../components/Container.svelte';
-    import Timeline from '../components/Timeline.svelte';
-    import TimelineItem from '../components/TimelineItem.svelte';
+    import { Accordian, Checkbox, Container, Counter, DatePicker, 
+        Form, Section, StarRatTimelineing, TimelineItem
+        } from "../components/index.js";
 
     let timelineItems = [
     {   side:"left",  icon: "",   content:"<h2>Left school</h2><p>Started drinking and smoking</p>"       },

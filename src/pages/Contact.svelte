@@ -151,18 +151,11 @@
 <script>
     import { onMount } from 'svelte';
 
-    import Container from '../components/Container.svelte';
-    import Section from '../components/Section.svelte';
-    import Form from '../components/Form.svelte';
-    import StarRating from '../components/StarRating.svelte';
-    import DatePicker from "../components/DatePicker.svelte";
-    import Counter from "../components/Counter.svelte";
-    import Accordian from "../components/Accordian.svelte";
-    import Checkbox from "../components/Checkbox.svelte";
-    import ToggleButton from "../components/ToggleButton.svelte";
-    
+    import { Accordian, Checkbox, Container, Counter, DatePicker, 
+        Form, Section, StarRating, ToggleButton
+        } from "../components/index.js";
 
-    export let router = {};
+        export let router = {};
       
     // Those contains useful information about current route status
     router.path; // /test

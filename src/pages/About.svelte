@@ -141,23 +141,12 @@
 <script>
     import {onMount, createEventDispatcher} from 'svelte';
 	import { Link, navigateTo } from 'svero';
-	import  StyledLink from '../components/StyledLink.svelte';
 
-    import Container from '../components/Container.svelte';
-    import Section from '../components/Section.svelte';
-    import Box from '../components/Box.svelte';
-    import Toast from '../components/Toast.svelte';
-    import Chip from '../components/Chip.svelte';
-    import Badge from '../components/Badge.svelte';
-    import Loader from '../components/Loader.svelte';
-    import Flipper from '../components/Flipper.svelte';
-    import SideTab from '../components/SideTab.svelte';
-    import TagButton from '../components/TagButton.svelte';
-    import RangeSlider from '../components/RangeSlider.svelte';
-    import HoverMenu from '../components/HoverMenu.svelte';
+    import { Accordian, Box, Checkbox, Container, Counter, DatePicker, 
+            Form, Section, StyledLink, Toast,Chip,Badge,Loader,Flipper,
+            SideTab,TagButton,RangeSlider,HoverMenu,Popup,Callout
+        } from "../components/index.js";
 
-	import Popup from "../components/Popup.svelte";
-	import Callout from "../components/Callout.svelte";
     
     export let router = {};
   

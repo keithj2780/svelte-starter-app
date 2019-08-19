@@ -1,22 +1,3 @@
-<script>
-    import { onMount } from 'svelte';
-
-    import Carousel from '../components/Carousel.svelte';
-    import Container from '../components/Container.svelte';
-    export let router = {};
-        
-    var slideIndex = 1;
-
-    onMount(() => {
-
-    });
-
-    let carousel;
-    let max = 4;
-
-</script>
-<style>
-</style>
 <Container>
 <Carousel bind:this={carousel}>
         <div class="slideshow-container">
@@ -64,3 +45,23 @@
 
 </Carousel>
 </Container>
+
+<script>
+    import { onMount } from 'svelte';
+
+    import {Carousel, Container} from '../components/index.js';
+    
+    export let router = {};
+        
+    var slideIndex = 1;
+
+    onMount(() => {
+
+    });
+
+    let carousel;
+    let max = 4;
+    
+</script>
+<style>
+</style>

@@ -24,9 +24,8 @@
 </Container>
     
 <script>
-    import Table from '../components/Table.svelte';
-    import Container from '../components/Container.svelte';
     import { onMount } from 'svelte';
+    import { Table,Container} from '../components/index.js';
     
     export let router = {};
         

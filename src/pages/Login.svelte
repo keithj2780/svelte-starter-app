@@ -39,10 +39,11 @@
 <script>
     import { onMount } from 'svelte';
 
-    import Container from '../components/Container.svelte';
-    import Modal from '../components/Modal.svelte';
-    import Form from '../components/Form.svelte';
-    export let router = {};
+    import { Accordian, Checkbox, Container, Counter, DatePicker, 
+        Form, Modal, Section, StarRating, ToggleButton
+        } from "../components/index.js";
+
+        export let router = {};
     
     // Those contains useful information about current route status
     router.path; // /test

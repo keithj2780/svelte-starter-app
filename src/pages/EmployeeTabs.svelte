@@ -22,9 +22,8 @@
     
 
 <script>
-    import Tabs from '../components/Tabs.svelte';
-    import Container from '../components/Container.svelte';
     import { onMount } from 'svelte';
+    import { Tabs,Container} from '../components/index.js';
     
     export let employees;
     let empId=0;

@@ -42,8 +42,8 @@
     
 <script>
     import { onMount } from 'svelte';
-    import Card from '../components/Card.svelte';
-    import Container from '../components/Container.svelte';
+
+    import { Card,Container} from '../components/index.js';
 
     export let employees;
 

@@ -13,7 +13,13 @@
         <HoverMenu isInfo={true} on:hover={() =>{console.log('hov')}}/>
     </Section>  
     <Section>
+        <h2>Simple Hover menu</h2>
         <HoverMenu items={menuItems} on:menu={(cmd)=>cmdFromHoverMenu=cmd.detail}/><br /><br /><br />
+        Got {cmdFromHoverMenu} from HoverMenu
+    </Section>  
+    <Section>
+            <h2>Two Line Hover menu</h2>
+            <HoverMenu items={menuItems} isTwoLine=true on:menu={(cmd)=>cmdFromHoverMenu=cmd.detail}/><br /><br /><br />
         Got {cmdFromHoverMenu} from HoverMenu
     </Section>  
         
@@ -172,12 +178,12 @@
     let calloutComponent;
 
     let menuItems = [
-        {name:'Upload ',        cmd:'upload',   active:true,},
-        {name:'Download ',      cmd:'download', active:false,},
-        {name:'Save ',          cmd:'save',     active:false,},
-        {name:'New ',           cmd:'new',      active:true,},
-        {name:'Toggle Info',    cmd:'toggleInfo',active:true,},
-        {name:'Other Stuff',    cmd:'more',     active:true,},
+        {name:'Upload ',        cmd:'upload',   line2:"Upload a file",          active:true,},
+        {name:'Download ',      cmd:'download', line2:"Download a file",        active:false,},
+        {name:'Save ',          cmd:'save',     line2:"Save a small file",      active:false,},
+        {name:'New ',           cmd:'new',      line2:"New File",               active:true,},
+        {name:'Toggle Info',    cmd:'toggleInfo',line2:"Info toggler here",     active:true,},
+        {name:'Other Stuff',    cmd:'more',     line2:"Do other stuff",         active:true,},
     ];
 
     onMount(() => {

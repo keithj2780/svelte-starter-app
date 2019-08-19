@@ -17,7 +17,11 @@
   <div class="dropdown-content">
       {#each items as item}
         {#if item.active}
-          <a href="javascript:void(0)" on:click={((e) => dispatchCmd(e,item.cmd))}>{item.name}</a>
+          <a href="javascript:void(0)" on:click={((e) => dispatchCmd(e,item.cmd))}>{item.name}
+            {#if isTwoLine}
+              <div class="line2-content">{item.line2}</div>
+            {/if}
+          </a>
         {/if}
       {/each}
   </div>
@@ -30,6 +34,7 @@
     export let items=[];
     export let isPlace=false;
     export let isInfo=false;
+    export let isTwoLine=false;
 
     function dispatchCmd(e,cmd) {
         //console.log(e);
@@ -70,10 +75,15 @@
   z-index: 1;
 }
 
+.line2-content {
+  font-size: 13px;
+  padding: 8px 0 0 0;
+  color: #474747;
+}
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 10px 14px;
   text-decoration: none;
   display: block;
 }

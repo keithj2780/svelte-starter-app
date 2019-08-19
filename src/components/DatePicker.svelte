@@ -251,8 +251,8 @@
             }
             weeks[week_number].push(day);
         });
-        console.log(week_numbers);
-        console.log(weeks);
+        //console.log(week_numbers);
+        //console.log(weeks);
     }
 </script>
 

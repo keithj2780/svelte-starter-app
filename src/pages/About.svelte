@@ -13,7 +13,7 @@
         <HoverMenu isInfo={true} on:hover={() =>{console.log('hov')}}/>
     </Section>  
     <Section>
-        <HoverMenu items={menuItems} on:menu={(cmd)=>cmdFromHoverMenu=cmd.detail}/><br />
+        <HoverMenu items={menuItems} on:menu={(cmd)=>cmdFromHoverMenu=cmd.detail}/><br /><br /><br />
         Got {cmdFromHoverMenu} from HoverMenu
     </Section>  
         
@@ -175,9 +175,9 @@
         {name:'Upload ',        cmd:'upload',   active:true,},
         {name:'Download ',      cmd:'download', active:false,},
         {name:'Save ',          cmd:'save',     active:false,},
-        {name:'New ',           cmd:'new', active:true,},
+        {name:'New ',           cmd:'new',      active:true,},
         {name:'Toggle Info',    cmd:'toggleInfo',active:true,},
-        {name:'Other Stuff',    cmd:'more',  active:true,},
+        {name:'Other Stuff',    cmd:'more',     active:true,},
     ];
 
     onMount(() => {

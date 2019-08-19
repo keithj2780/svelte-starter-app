@@ -97,16 +97,11 @@
 }
 @media screen and (max-width: 650px) {
 	
-.inside-label {
-    width: 100%;
-    margin-bottom: 4px;
-    display: inline-block;
-}
-body {
-    width: auto;
-    display: inherit;
-    padding: 20px;
-}
+  .inside-label {
+      width: 100%;
+      margin-bottom: 4px;
+      display: inline-block;
+  }
 }
  
 @keyframes myAnimation {

@@ -7,23 +7,13 @@
                 <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar">
             </div>
 
-            <div class="row">
-                <div class="col-25">
-                    <label for="fname">Username</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="fname" name="firstname" placeholder="Your username..">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="lname">Password</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="pw" name="pw" placeholder="Your password..">
-                </div>
-            </div>
-        
+            <FormField label="fname">
+                <input type="text" id="fname" name="firstname" placeholder="Your username..">
+            </FormField>
+            <FormField label="Password">
+                <input type="text" id="pw" name="pw" placeholder="Your password..">
+            </FormField>        
+            
             <div class="row">
                 <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
                     <button type="submit">Login</button>&nbsp;
@@ -40,7 +30,7 @@
     import { onMount } from 'svelte';
 
     import { Accordian, Checkbox, Container, Counter, DatePicker, 
-        Form, Modal, Section, StarRating, ToggleButton
+        Form, FormField, Modal, Section, StarRating, ToggleButton
         } from "../components/index.js";
 
         export let router = {};

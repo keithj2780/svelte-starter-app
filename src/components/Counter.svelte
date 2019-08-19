@@ -21,14 +21,14 @@
 		transform: translateY(-1px);
 		margin: 0 5px;
 		border-radius: 3px;
-		border: 5px red;
+		border: 1px rgb(0, 0, 0);
 		width: 65px;
 		box-shadow: 0 3px 15px 1px rgba(0,0,0,0.3)
 	}
 	.counter-inner {
 		margin: 0 0px;
 	}
-	button {
+	.counter-outer button {
 		height: 20px;
 		padding: 0px 7px 1px 7px;
 		margin: 0;

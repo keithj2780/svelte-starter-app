@@ -2,117 +2,60 @@
 <h1>Contact us please {firstname}!</h1>
 <Container>
     <Form>
-        <div class="row">
-            <div class="col-25">
-                <label>Toggling</label>
-            </div>
-            <div class="col-75">
-                <ToggleButton label="" value={toggleValue} bind:checked={toggleValue}></ToggleButton>{toggleValue}
-            </div>
-        </div>
+        <FormField label="Toggling">
+            <ToggleButton label="" value={toggleValue} bind:checked={toggleValue}></ToggleButton>{toggleValue}
+        </FormField>
+
+        <FormField label="Hobbies">
+            <Checkbox label="" value={cbValue} bind:checked={cbValue}></Checkbox>{cbValue}
+        </FormField>    
     
-        <div class="row">
-            <div class="col-25">
-                <label>Hobbies</label>
-            </div>
-            <div class="col-75">
-                <Checkbox label="" value={cbValue} bind:checked={cbValue}></Checkbox>{cbValue}
-            </div>
-        </div>
+        <FormField label="Interests">
+            <Checkbox label="" value={cbValue2} bind:checked={cbValue2}></Checkbox>{cbValue2}
+        </FormField>    
     
-    
-        <div class="row">
-            <div class="col-25">
-                <label>Interests</label>
-            </div>
-            <div class="col-75">
-                <Checkbox label="" value={cbValue2} bind:checked={cbValue2}></Checkbox>{cbValue2}
-            </div>
-        </div>
-    
-        <div class="row">
-            <div class="col-25">
-                <label for="fname">First Name</label>
-            </div>
-            <div class="col-75">
-                <input type="text" bind:value={firstname} id="fname" name="firstname" value={firstname} placeholder="Your name..">
-            </div>
-        </div>
+        <FormField label="First Name">
+            <input type="text" bind:value={firstname} id="fname" name="firstname" value={firstname} placeholder="Your name..">
+        </FormField>
 
-        <div class="row">
-            <div class="col-25">
-                <label for="lname">Last Name</label>
-            </div>
-            <div class="col-75">
-                <input type="text" bind:value={lastname} value={lastname} placeholder="Your last name..">
-            </div>
-        </div>
+        <FormField label="Last Name">
+            <input type="text" bind:value={lastname} value={lastname} placeholder="Your last name..">
+        </FormField>
 
-        <div class="row">
-            <div class="col-25">
-                <label>Password</label>
-            </div>
-            <div class="col-75">
-                <input type="password" bind:value={pw} value={pw} placeholder="An easy to guess password please..">
-            </div>
-        </div>
-    
-    
-        <div class="row">
-            <div class="col-25">
-                <label for="country">Country</label>
-            </div>
-            <div class="col-75">
-                <select>
-                    <option value="au">Australia</option>
-                    <option value="ca">Canada</option>
-                    <option value="us">USA</option>
-                </select>
-            </div>
-        </div>
+        <FormField label="Password">
+            <input type="password" bind:value={pw} value={pw} placeholder="An easy to guess password please..">
+        </FormField>    
 
-        <div class="row">
-            <div class="col-25">
-                <label for="message">Message</label>
-            </div>
-            <div class="col-75">
-                <textarea bind:value={message}  value={message} placeholder="Write something.." style="height:200px"></textarea>
-            </div>
-        </div>
+        <FormField label="Country">
+            <select>
+                <option value="au">Australia</option>
+                <option value="ca">Canada</option>
+                <option value="us">USA</option>
+            </select>
+        </FormField>
 
+        <FormField label="Message">
+            <textarea bind:value={message}  value={message} placeholder="Write something.." style="height:200px"></textarea>
+        </FormField>
 
-        <div class="row">
-            <div class="col-25">
-                <label for="rating">How good is your day so far?</label>
-            </div>
-            <div class="col-75">
-                <span>
-                    <StarRating id="rating" bind:this={controlRating} bind:value={dayRating} bind:hoveredvalue={thinkingAboutRating}/>
-                    {#if thinkingAboutRating}
-                        Thinking about a {thinkingAboutRating} rating ?
-                    {:else}
-                        {dayRating} stars is {dayRating >= 4 ? "great" : (dayRating >= 2 ? "so-so" : "not so good.. huh?")}
-                    {/if}
-                    <br />
-                </span>
-            </div>
-        </div>
+        <FormField label="How good is your day so far?">
+            <span>
+                <StarRating id="rating" bind:this={controlRating} bind:value={dayRating} bind:hoveredvalue={thinkingAboutRating}/>
+                {#if thinkingAboutRating}
+                    Thinking about a {thinkingAboutRating} rating ?
+                {:else}
+                    {dayRating} stars is {dayRating >= 4 ? "great" : (dayRating >= 2 ? "so-so" : "not so good.. huh?")}
+                {/if}
+                <br />
+            </span>
+        </FormField>
+            
+        <FormField label="Favorite Number?">
+            <span><Counter bind:count={favNum} style="margin:6px"/> Have you considered {favNum*2} ?</span>
+        </FormField>
 
-        <div class="row">
-            <div class="col-25">
-                <label>Favorite Number?</label>
-            </div>
-            <div class="col-75">
-                <span><Counter bind:count={favNum} style="margin:6px"/> Have you considered {favNum*2} ?</span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-25">
-                <label for="rating">Pick a date</label>
-            </div>
-            <div class="col-75">
-                <input type="text" on:click={()=>show_date_picker=!show_date_picker} bind:value={picked_date} placeholder="Pick a date">
+        <FormField label="Pick a date">
+            <input type="text" on:click={()=>show_date_picker=!show_date_picker} bind:value={picked_date} placeholder="Pick a date">
             {#if show_date_picker}
             <DatePicker
                 format={"DD/MM/YYYY"}
@@ -120,18 +63,13 @@
                 on:cancel={() => show_date_picker = false}
             />
             {/if}
-            </div>
-        </div>
+        </FormField>
 
         <div class="row">
             <Accordian header="Supplementary Info">
-                <div class="col-25">
-                    <label for="message">Bonus Info goes here</label>
-                </div>
-                <div class="col-75">
+                <FormField label="Bonus Info goes here">
                     <textarea bind:value={message2}  value={message2} placeholder="Write something else .." style="height:200px"></textarea>
-                </div>
-                
+                </FormField>                
             </Accordian>
         </div>
 
@@ -152,7 +90,7 @@
     import { onMount } from 'svelte';
 
     import { Accordian, Checkbox, Container, Counter, DatePicker, 
-        Form, Section, StarRating, ToggleButton
+        Form, FormField, Section, StarRating, ToggleButton
         } from "../components/index.js";
 
         export let router = {};

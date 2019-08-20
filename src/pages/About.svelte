@@ -19,8 +19,8 @@
     </Section>  
     <Section>
             <h2>Two Line Hover menu</h2>
-            <HoverMenu items={menuItems} isTwoLine=true on:menu={(cmd)=>cmdFromHoverMenu=cmd.detail}/><br /><br /><br />
-        Got {cmdFromHoverMenu} from HoverMenu
+            <HoverMenu items={menuItems} isTwoLine=true on:menu={(cmd)=>cmdFromHoverMenu2=cmd.detail}/><br /><br /><br />
+        Got {cmdFromHoverMenu2} from HoverMenu
     </Section>  
         
     <Section>
@@ -173,6 +173,7 @@
     let isFlipped;
     let tagSideClicked = '';
     let cmdFromHoverMenu;
+    let cmdFromHoverMenu2;
     let range;
 
     let calloutComponent;

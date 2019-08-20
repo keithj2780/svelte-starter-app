@@ -73,15 +73,15 @@
 					<h3>Seinfeld</h3>
 					<Link href="/contact/Cosmo/Kramer/5"><i class="fa fa-fw fa-square"></i> Cosmo</Link>
 					<Link href="/contact/Jerry/Seinfeld/4"><i class="fa fa-fw fa-square"></i> Jerry</Link>
-					<Link href="/contact/George//1"><i class="fa fa-fw fa-square"></i> George</Link>
-					<Link href="/contact/Elaine/Benice/2"><i class="fa fa-fw fa-forward"></i> Elaine</Link>
+					<Link href="/contact/George/Costanza/1"><i class="fa fa-fw fa-square"></i> George</Link>
+					<Link href="/contact/Elaine/Benes/2"><i class="fa fa-fw fa-forward"></i> Elaine</Link>
 				</div>
 			</div>
 		</div>
 	</div>
 	<Link href="/contact">Contact</Link>
 	<div class="topnav-right">
-		<Link href="/about">Misc</Link>
+		<Link href="/about">Miscellaneous Controls</Link>
 		<Link href="/login"><i class="fa fa-sign-in"></i></Link>
 	</div>
 </NavBar>

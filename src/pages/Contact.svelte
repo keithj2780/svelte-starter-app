@@ -100,6 +100,12 @@
     router.route; // Route Object
     router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
 
+    $: {
+        router.params;
+        console.log('router params='+JSON.stringify(router,null,2));
+        initFields();
+    }
+
     let toggleValue=false;
     let cbValue=false;
     let cbValue2=true;
@@ -124,11 +130,14 @@
 
     onMount(() => {
         busy = false;
+        initFields();
+    });
+    function initFields() {
         if (router.params.firstname) firstname = router.params.firstname;
         if (router.params.lastname) lastname = router.params.lastname;
         if (router.params.rating) dayRating = router.params.rating;
-        controlRating.setValue(dayRating);
-    });
+        if (controlRating) controlRating.setValue(dayRating);
+    }
 
     function handleSubmit (e) {
         e.preventDefault();

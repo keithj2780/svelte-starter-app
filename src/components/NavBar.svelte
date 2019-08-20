@@ -139,8 +139,8 @@
 /* Create three equal columns that floats next to each other */
 /* Style the dropdown content (hidden by default) */
 :global(.dropdown-content .header ) {
-  background-color: blue;
-  color:red;
+  background-color: rgb(78, 78, 102);
+  color:rgb(153, 204, 238);
   padding: 6px;
   margin: 1px;
   text-align:center;

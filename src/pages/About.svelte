@@ -7,7 +7,7 @@
 
     <Section>
         <h2>Range slider</h2>
-        <RangeSlider on:change={(e)=>range=e.detail}/>
+        <RangeSlider value={range} min="21" max="129" on:change={(e)=>range=e.detail}/>
         {range} selected<br />
     </Section>  
     <Section>
@@ -137,9 +137,10 @@
 
     <Section><button on:click={toggleLoader}>Toggle Loaders</button>
         <span>
-            <Loader bind:this={loader1}/>
+            <Loader bind:this={loader1} />
             <Loader bind:this={loader2} type="2" speed="2"/>
             <Loader bind:this={loader3} type="3" speed="3"/>
+            <Loader bind:this={loader7} type="7"/>
         </span>
     </Section>
 
@@ -191,16 +192,19 @@
     let toast3;
     let toastBlank;
     let toastText;
+
     let loader1;
     let loader2;
     let loader3;
     let loader4;
+    let loader7;
     let bLoaderVisible=false;
+
     let isFlipped;
     let tagSideClicked = '';
     let cmdFromHoverMenu;
     let cmdFromHoverMenu2;
-    let range;
+    let range = 110;
 
     let calloutComponent;
 
@@ -241,10 +245,12 @@
             loader1.show();
             loader2.show();
             loader3.show();
+            loader7.show();
         } else {
             loader1.hide();
             loader2.hide();
             loader3.hide();
+            loader7.hide();
         }
     }
 

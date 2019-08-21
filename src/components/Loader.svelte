@@ -1,11 +1,23 @@
-{#if modal}
-<div class="{modalClass} {hidden}" {style}>
-    <div class="loaderbase centered {hidden}" {style}>
-    </div>
-</div>
+{#if type==="7"}
+  {#if modal}
+  <div class="{modalClass} {hidden}" {style}>
+      <div class="centered {hidden} loaderStyle7" {style}>
+      </div>
+  </div>
+  {:else}
+  <div class="{hidden} loaderStyle7" {style}>
+  </div>
+  {/if}
 {:else}
-<div class="loaderbase {hidden} loader{speed}s loaderStyle{type}" {style}>
-</div>
+  {#if modal}
+  <div class="{modalClass} {hidden}" {style}>
+      <div class="loaderbase centered {hidden} loaderStyle{type}" {style}>
+      </div>
+  </div>
+  {:else}
+  <div class="loaderbase {hidden} loader{speed}s loaderStyle{type}" {style}>
+  </div>
+  {/if}
 {/if}
 
 <script>
@@ -22,7 +34,7 @@
 	const dispatch = createEventDispatcher();
 
     onMount(() => {
-        hidden="";
+        hidden="hide";
         modalClass="";
     });
     export function hide() {
@@ -49,16 +61,12 @@
   height: 24px;
 }
 
-.hide {
-    display:none;
-}
-
 .loader1s {
   animation: spin 1s linear infinite;
 }
 
 .loader2s {
-  animation: spin 2s linear infinite;
+  animation: reversespin 2s linear infinite;
 }
 
 .loader3s {
@@ -82,6 +90,64 @@
   border-bottom: 8px solid #3498db;
 }
 
+.loaderStyle7,
+.loaderStyle7:before,
+.loaderStyle7:after {
+  display: inline-block;
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+}
+.loaderStyle7 {
+  color: #99afdf;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loaderStyle7:before,
+.loaderStyle7:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.loaderStyle7:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loaderStyle7:after {
+  left: 3.5em;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
 .centered {
   position: absolute;
   top: 50%;
@@ -103,8 +169,17 @@
   cursor: pointer; /* Add a pointer on hover */
 }
 
+.hide {
+    display:none;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+@keyframes reversespin {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(-360deg); }
+  100% { transform: rotate(0deg); }
 }
 </style>

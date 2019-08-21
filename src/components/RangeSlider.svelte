@@ -1,5 +1,5 @@
 <div class="slidecontainer">
-    <input type="range" min="0" max="100" bind:value={value} class="slider" on:input={(e)=>handleChange(e)}>
+    <input type="range" min={min} max={max} bind:value={value} class="slider" on:input={(e)=>handleChange(e)}>
 </div>
 
 <script>
@@ -7,6 +7,8 @@
  
   const dispatch = createEventDispatcher();
   export let value=50;
+  export let min="1";
+  export let max="100";
 
   function handleChange(e) {
     //console.log(e);
@@ -16,7 +18,7 @@
 </script>
 <style>
 .slidecontainer {
-  width: 100%; /* Width of the outside container */
+  width: 100%;
 }
 
 /* The slider itself */
@@ -29,6 +31,7 @@
   outline: none;
   border-radius: 5px;   
   opacity: 0.45;
+  display: inline-block;
 }
 
 /* Mouse-over effects */

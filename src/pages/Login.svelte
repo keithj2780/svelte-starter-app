@@ -16,7 +16,12 @@
             
             <div class="row">
                 <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
-                    <button type="submit">Login</button>&nbsp;
+                    <button type="submit" on:click|preventDefault="{handleSubmit}" >
+                        {#if busy}
+                        <i class="fa fa-refresh fa-spin"></i>
+                        {/if}
+                        Login
+                    </button>&nbsp;
                     <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
             <div class="row">
@@ -33,12 +38,7 @@
         Form, FormField, Modal, Section, StarRating, ToggleButton
         } from "../components/index.js";
 
-        export let router = {};
-    
-    // Those contains useful information about current route status
-    router.path; // /test
-    router.route; // Route Object
-    router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
+    export let router = {};
 
     let name = 'Svelte';
     let busy = false;
@@ -48,8 +48,8 @@
     });
     function handleSubmit (e) {
         e.preventDefault();
-        //console.log('Got submit');
-        //console.log(e);
+        console.log('Got submit');
+        console.log(e);
         busy = true;
     }
 </script>

@@ -102,7 +102,7 @@
 
     $: {
         router.params;
-        console.log('router params='+JSON.stringify(router,null,2));
+        //console.log('router params='+JSON.stringify(router,null,2));
         initFields();
     }
 

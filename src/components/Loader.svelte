@@ -1,10 +1,10 @@
 {#if modal}
 <div class="{modalClass} {hidden}" {style}>
-    <div class="loader centered {hidden}" {style}>
+    <div class="loaderbase centered {hidden}" {style}>
     </div>
 </div>
 {:else}
-<div class="loader {hidden}" {style}>
+<div class="loaderbase {hidden} loader{speed}s loaderStyle{type}" {style}>
 </div>
 {/if}
 
@@ -15,6 +15,8 @@
     export let timeout=0;
     export let hidden;
     export let modal;
+    export let speed="1";
+    export let type="1";
     let modalClass;
 
 	const dispatch = createEventDispatcher();
@@ -39,17 +41,45 @@
     }
 </script>
 <style>
+.loaderbase {
+  display: inline-block;
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  width: 24px;
+  height: 24px;
+}
+
 .hide {
     display:none;
 }
 
-.loader {
-  border: 8px solid #f3f3f3; /* Light grey */
-  border-top: 8px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
+.loader1s {
+  animation: spin 1s linear infinite;
+}
+
+.loader2s {
   animation: spin 2s linear infinite;
+}
+
+.loader3s {
+  animation: spin 3s linear infinite;
+}
+
+.loaderStyle1 {
+  border-radius: 50%;
+}
+
+.loaderStyle2 {
+  border-radius: 50%;
+  border-top: 12px solid #3498db;
+  border-right: 12px solid rgb(62, 72, 94);
+  border-bottom: 12px solid #3498db;
+  border-left: 12px solid rgb(62, 72, 94);
+}
+
+.loaderStyle3 {
+  border-radius: 50%;
+  border-bottom: 8px solid #3498db;
 }
 
 .centered {

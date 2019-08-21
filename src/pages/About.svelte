@@ -209,12 +209,12 @@
     let calloutComponent;
 
     let menuItems = [
-        {name:'Upload ',        cmd:'upload',   line2:"Upload a file",          active:true,},
-        {name:'Download ',      cmd:'download', line2:"Download a file",        active:false,},
-        {name:'Save ',          cmd:'save',     line2:"Save a small file",      active:false,},
-        {name:'New ',           cmd:'new',      line2:"New File",               active:true,},
-        {name:'Toggle Info',    cmd:'toggleInfo',line2:"Info toggler here",     active:true,},
-        {name:'Other Stuff',    cmd:'more',     line2:"Do other stuff",         active:true,},
+        {name:'Upload ',        cmd:'upload',   line2:"Upload a file",          active:true,    icon:"fa-circle"},
+        {name:'Download ',      cmd:'download', line2:"Download a file",        active:false,   icon:"fa-square"},
+        {name:'Save ',          cmd:'save',     line2:"Save a small file",      active:false,   icon:"fa-sign-in"},
+        {name:'New ',           cmd:'new',      line2:"New File",               active:true,    icon:"fa-sign-out"},
+        {name:'Toggle Info',    cmd:'toggleInfo',line2:"Info toggler here",     active:true,    icon:"fa-share"},
+        {name:'Other Stuff',    cmd:'more',     line2:"Do other stuff",         active:true,    icon:"fa-forward"},
     ];
 
     onMount(() => {

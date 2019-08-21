@@ -17,11 +17,13 @@
   <div class="dropdown-content">
       {#each items as item}
         {#if item.active}
-          <a href="javascript:void(0)" on:click={((e) => dispatchCmd(e,item.cmd))}>{item.name}
+        <span>
+          <a href="javascript:void(0)" on:click={((e) => dispatchCmd(e,item.cmd))}><i class="fa fa-fw {item.icon}"></i>{item.name}
             {#if isTwoLine}
-              <div class="line2-content">{item.line2}</div>
+              <div class="line2-content"><i class="fa fa-fw "></i>{item.line2}</div>
             {/if}
           </a>
+        </span>
         {/if}
       {/each}
   </div>

@@ -123,16 +123,18 @@
     <Container>
             Stuff that needs more explaination 
             <Popup popuptext="The Spark plan allows outbound network requests only to Google-owned services. Inbound invocation requests are allowed within the quota. On the Blaze plan, Cloud Functions provides a perpetual free tier. The first 2,000,000 invocations, 400,000 GB-sec, 200,000 CPU-sec, and 5 GB of Internet egress traffic is provided for free each month. You are only charged on usage past this free allotment. Pricing is based on total number of invocations, and compute time. Compute time is variable based on the amount of memory and CPU provisioned for a function. Usage limits are also enforced through daily and 100s quotas. For more information, see Cloud Functions Pricing."
-            ms=3000  tooltip=true style="font-size:12px; text-align:left;padding:6px;"><i class="fa fa-question-circle"></i></Popup>
+                ms=3000  tooltip=true style="font-size:12px; text-align:left;padding:6px;">
+                <i class="fa fa-question-circle"></i>
+            </Popup>
             <Section><button on:click={doShowCallout}>Click to show the callout again</button></Section>
     </Container>
-           
+
     <Section>
         <p>
             <button on:click={setTheme1}>Set Green Theme</button>
-            To set the theme, change the CSS vars in global.css :root 
+            To set the theme colours, change the CSS vars in <code>global.css :root &#123; &#125;</code>
         </p>
-        
+
     </Section>
 
     <Section><button on:click={toggleLoader}>Toggle Loaders</button>

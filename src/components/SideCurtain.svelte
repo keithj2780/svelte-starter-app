@@ -28,11 +28,11 @@
 <style>
 .sideCurtain {
   height: 100%;
-  width: 0;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 0;
+  left: -250px;
   background-color: var(--navbackground); 
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px;
@@ -40,7 +40,7 @@
 }
 
 .expand {
-  width:250px;
+  left:0px;
 }
 
 /* The navigation menu links */

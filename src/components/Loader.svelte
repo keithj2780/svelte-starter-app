@@ -1,7 +1,7 @@
 {#if type==="7"}
   {#if modal}
   <div class="{modalClass} {hidden}" {style}>
-      <div class="centered {hidden} loaderStyle7" {style}>
+      <div class="{hidden} loaderStyle7 centered" {style}>
       </div>
   </div>
   {:else}
@@ -11,11 +11,11 @@
 {:else}
   {#if modal}
   <div class="{modalClass} {hidden}" {style}>
-      <div class="loaderbase centered {hidden} loaderStyle{type}" {style}>
+      <div class="loaderbase {hidden} loader{speed}s loaderStyle{type} centered" {style}>
       </div>
   </div>
   {:else}
-  <div class="loaderbase {hidden} loader{speed}s loaderStyle{type}" {style}>
+      <div class="loaderbase {hidden} loader{speed}s loaderStyle{type}" {style}>
   </div>
   {/if}
 {/if}

@@ -22,6 +22,7 @@ import Popup from './Popup.svelte';             export { Popup };
 import RangeSlider from './RangeSlider.svelte';     export { RangeSlider };
 import Section from './Section.svelte';             export { Section };
 import SideCurtain from './SideCurtain.svelte';     export { SideCurtain };
+import SideMenu from './SideMenu.svelte';           export { SideMenu };
 import SideTab from './SideTab.svelte';             export { SideTab }; 
 import StarRating from './StarRating.svelte';       export { StarRating };
 import StyledLink from './StyledLink.svelte';       export { StyledLink };

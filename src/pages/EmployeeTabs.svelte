@@ -4,17 +4,19 @@
     <Tabs id="myTabs" bind:this={tabs} >
         <div class="tab">
         {#each employees as emp, i}
-            <button class="tablinks" id={i} on:click={openTab}>{emp.name.first}</button>
+            <button class="tablinks" id={i} on:click={openTab}>{emp.fname}</button>
         {/each}
         </div>
         {#each employees as emp, i}
         <div id={i} class="tabcontent">
-            <h3>{emp.name.first+" "+emp.name.last}</h3>
+            <h3>{emp.fname+" "+emp.sname}</h3>
             <p>London is the capital city of England.</p>
             <p><i class="fa fa-envelope"></i> {emp.email}</p>
-            <p>{emp.dob.date.slice(0,10)}</p>
-            <p align:centre><img src={emp.picture.thumbnail} alt={emp.name.first} style=width:32px;height:32px></p>
-            <p>{emp.location.timezone.description}</p>
+            <p>{emp.dob.slice(0,10)}</p>
+            <p>{emp.jobtitle}</p>
+            <p>{@html emp.bio}</p>
+            <p align:centre><img src={emp.photo} alt={emp.fname} style=width:32px;height:32px></p>
+            <p>{emp.city}, {emp.state}</p>
         </div>
         {/each}
     </Tabs>

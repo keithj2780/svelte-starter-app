@@ -8,16 +8,16 @@
             <th style="width:20%;">Email</th>
             <th style="width:15%;">DoB</th>
             <th style="width:9%;">Thumbnail</th>
-            <th style="width:26%;">TZ</th>
+            <th style="width:26%;">Location</th>
         </tr>
         {#each employees as emp, i}
         <tr on:click="{()=>handleClick(i)}">
                 <td>{i+1}</td>
-                <td>{emp.name.first+" "+emp.name.last}</td>
+                <td>{emp.fname+" "+emp.sname}</td>
                 <td><i class="fa fa-envelope"></i> {emp.email}</td>
-                <td>{emp.dob.date.slice(0,10)}</td>
-                <td style="text-align:center"><img src={emp.picture.thumbnail} alt={emp.name.first} style=width:32px;height:32px></td>
-                <td>{emp.location.timezone.description}</td>
+                <td>{emp.dob.slice(0,10)}</td>
+                <td style="text-align:center"><img src={emp.photo} alt={emp.fname} style=width:32px;height:32px></td>
+                <td>{emp.city}, {emp.state}</td>
         </tr>
         {/each}
     </Table>

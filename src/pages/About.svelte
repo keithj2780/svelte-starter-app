@@ -6,6 +6,18 @@
 <Container>
 
     <Section>
+        <button on:click="{() => hidePalettePicker=!hidePalettePicker}" >Show Tag Picker</button>
+        <ColorPicker bind:hide={hidePalettePicker} values='{["#2980b9","#95a5a6", "#f39c12"]}'
+        on:select="{(e)=>console.log('clicked '+e.detail)}" 
+        options="{colorValues}"/>
+
+        <button on:click="{() => hidePalettePicker2=!hidePalettePicker2}" >Show Tag Picker (multi)</button>
+        <ColorPicker bind:hide={hidePalettePicker2} values='{["#2980b9","#95a5a6", "#f39c12"]}'
+        on:select="{(e)=>console.log('clicked '+e.detail)}" 
+        options="{colorValues}"
+        isMulti=true/>
+    </Section>
+    <Section>
         <h2>Range slider</h2>
         <RangeSlider value={range} min="21" max="129" on:change={(e)=>range=e.detail}/>
         {range} selected<br />
@@ -175,7 +187,7 @@
     import {onMount, createEventDispatcher} from 'svelte';
 	import { Link, navigateTo } from 'svero';
 
-    import { Accordian, Box, Checkbox, Container, Counter, DatePicker, 
+    import { Accordian, Box, Checkbox, ColorPicker, Container, Counter, DatePicker, 
             Form, Section, StyledLink, Toast,Chip,Badge,Loader,Flipper,
             SideTab,TagButton,RangeSlider,HoverMenu,Popup,Callout
         } from "../components/index.js";
@@ -201,6 +213,8 @@
     let loader4;
     let loader7;
     let bLoaderVisible=false;
+    let hidePalettePicker=true;
+    let hidePalettePicker2=true;
 
     let isFlipped;
     let tagSideClicked = '';
@@ -218,6 +232,29 @@
         {name:'Toggle Info',    cmd:'toggleInfo',line2:"Info toggler here",     active:true,    icon:"fa-share"},
         {name:'Other Stuff',    cmd:'more',     line2:"Do other stuff",         active:true,    icon:"fa-forward"},
     ];
+
+    let colorValues= [
+            "#1abc9c"
+          , "#2ecc71"
+          , "#3498db"
+          , "#9b59b6"
+          , "#34495e"
+          , "#16a085"
+          , "#27ae60"
+          , "#2980b9"
+          , "#8e44ad"
+          , "#2c3e50"
+          , "#f1c40f"
+          , "#e67e22"
+          , "#e74c3c"
+          , "#ecf0f1"
+          , "#95a5a6"
+          , "#f39c12"
+          , "#d35400"
+          , "#c0392b"
+          , "#bdc3c7"
+          , "#7f8c8d"
+        ];
 
     onMount(() => {
         loader1.hide();

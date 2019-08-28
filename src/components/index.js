@@ -6,6 +6,7 @@ import Card from './Card.svelte';               export { Card };
 import Carousel from './Carousel.svelte';       export { Carousel };
 import Checkbox from './Checkbox.svelte';       export { Checkbox };
 import Chip from './Chip.svelte';               export { Chip };
+import ColorPicker from './ColorPicker.svelte';               export { ColorPicker };
 import Container from './Container.svelte';     export { Container };
 import Counter from './Counter.svelte';         export { Counter };
 import DatePicker from './DatePicker.svelte';   export { DatePicker };

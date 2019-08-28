@@ -10,7 +10,6 @@
         {#each employees as emp, i}
         <div id={i} class="tabcontent">
             <h3>{emp.fname+" "+emp.sname}</h3>
-            <p>London is the capital city of England.</p>
             <p><i class="fa fa-envelope"></i> {emp.email}</p>
             <p>{emp.dob.slice(0,10)}</p>
             <p>{emp.jobtitle}</p>

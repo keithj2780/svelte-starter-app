@@ -42,6 +42,7 @@
 	top:50px;
   z-index:1;
 	float:right;	
+	cursor:pointer;
 }
 
 .sidemenu.left {

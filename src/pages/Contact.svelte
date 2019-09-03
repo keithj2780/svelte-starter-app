@@ -59,9 +59,12 @@
             {#if show_date_picker}
             <DatePicker
                 format={"DD/MM/YYYY"}
-                on:date={(event) => picked_date = event.detail.date}
+                on:date={(event) => {picked_date = event.detail.date; picked_dateObj = event.detail.date_object; console.log(event.detail);}}
                 on:cancel={() => show_date_picker = false}
             />
+            {/if}
+            {#if picked_dateObj}
+                <p>Epoch Time is {picked_dateObj.getTime()}</p>
             {/if}
         </FormField>
 
@@ -118,6 +121,7 @@
     let thinkingAboutRating=0;
     let favNum=44;
     let picked_date = "05/08/2019";
+    let picked_dateObj;
     let show_date_picker = false;
 
     let controlRating;

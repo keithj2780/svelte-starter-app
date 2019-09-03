@@ -7,7 +7,7 @@
 
     <Section>
         <button on:click="{() => hidePalettePicker=!hidePalettePicker}" >Show Tag Picker</button>
-        <ColorPicker bind:hide={hidePalettePicker} values='{["#2980b9","#95a5a6", "#f39c12"]}'
+        <ColorPicker bind:hide={hidePalettePicker} values='{["#2980b9"]}'
         on:select="{(e)=>console.log('clicked '+e.detail)}" 
         options="{colorValues}"/>
 

@@ -48,6 +48,7 @@
     /* Hide the images by default */
     :global(.carousel .mySlides) {
         display: none;
+        object-fit: cover;
     }
 
     /* Next & previous buttons */

@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	// import { Link, navigateTo } from 'svero';
 
 	import Routes from './Routes.svelte';
 	import NavBar from './components/NavBar.svelte';

@@ -16,7 +16,7 @@
 
 <Box>
     <h3>Svelte is small, fast to run, fast to develop</h3>
-    <p>The whole of this app has dependencies on only svelte itself and the svero router.</p>
+    <p>The whole of this app has dependencies on only svelte itself and the svelte-spa-router router.</p>
     <p>Icons (fontawesome et al) and the banner, test data images & carousel images are just about the only things fetched at run time.
         Everything else you see is loaded now.</p>
     <p>This app is approx 110K of JS, CSS, HTML and a few static icons. Consequently it loads very quickly.</p>

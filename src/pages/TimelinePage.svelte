@@ -22,7 +22,7 @@
 
 <script>
     import { Accordian, Checkbox, Container, Counter, DatePicker, 
-        Form, Section, StarRatTimelineing, TimelineItem
+        Form, Section, StarRating, Timeline, TimelineItem
         } from "../components/index.js";
 
     let timelineItems = [

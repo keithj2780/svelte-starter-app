@@ -1,5 +1,4 @@
 <script>
-	// import { Router, Route, Link, navigateTo } from 'svero';
     import Router from 'svelte-spa-router'
 
 	import EmployeeTable from './pages/EmployeeTable.svelte';
@@ -17,15 +16,18 @@
 const routes = {
     // Exact path
     '/': Index,
-    '/login': Login,
+    '/login':                                Login,
     "/contact/:firstname/:lastname/:rating": Contact,
-    "/table": EmployeeTable,    //   employees={emps}/>
-    "/tabs": EmployeeTabs,      //   employees={emps}/>
+    "/contact/:firstname/:lastname":         Contact,
+    "/contact":         Contact,
+    "/table":           EmployeeTable,    //   employees={emps}/>
+    "/tabs":            EmployeeTabs,      //   employees={emps}/>
     "/about/:who/:where": About,
-    "/carousel": Images,
-    "/cards": EmployeeCards,     //   employees={emps}/>
-    "/testimonials": EmployeeTestimonials,  //   employees={emps}/>
-    //  "/timeline" component={TimelinePage}/>
+    "/about":           About,
+    "/carousel":        Images,
+    "/cards":           EmployeeCards,     //   employees={emps}/>
+    "/testimonials":    EmployeeTestimonials,  //   employees={emps}/>
+    "/timeline":        TimelinePage,
     // Catch-all
     // This is optional, but if present it must be the last
     '*': Index,

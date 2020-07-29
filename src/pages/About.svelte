@@ -185,7 +185,6 @@
 
 <script>
     import {onMount, createEventDispatcher} from 'svelte';
-	// import { Link, navigateTo } from 'svero';
 
     import { Accordian, Box, Checkbox, ColorPicker, Container, Counter, DatePicker, 
             Form, Section, StyledLink, Toast,Chip,Badge,Loader,Flipper,

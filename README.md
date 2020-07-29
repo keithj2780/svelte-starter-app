@@ -45,7 +45,8 @@ The CSS variables are in /public/global.css and all other CSS is local to each c
 
 The project file structure separates components from the pages.
 
-The only other dependency is the [svero router](https://github.com/kazzkiq/svero). Routes are defined in /Routes.svelte
+~~The only other dependency is the [svero router](https://github.com/kazzkiq/svero). Routes are defined in /Routes.svelte~~
+The only other dependency is the [svelte-spa-router](https://github.com/ItalyPaleAle/svelte-spa-router). Routes are defined in /Routes.svelte
 
 However, [fontawesome](https://fontawesome.com) and [materialdesignicons](https://materialdesignicons.com) and also [FeatherIcons](https://feathericons.com) are all used - the only reason for doing so is to demonstrate that there is no particular dependency on any of them. Remove the links from public/index.html if desired.
 

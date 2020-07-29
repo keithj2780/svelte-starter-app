@@ -27,7 +27,9 @@
     import { onMount } from 'svelte';
     import { Table,Container} from '../components/index.js';
     
-    export let employees;
+    //	just some JSON test data to populate components
+	import {employees} from '../TestData.js';
+
     let empId=0;
     
     onMount(() => {

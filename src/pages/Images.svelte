@@ -51,8 +51,6 @@
 
     import {Carousel, Container} from '../components/index.js';
     
-    export let router = {};
-        
     var slideIndex = 1;
 
     onMount(() => {

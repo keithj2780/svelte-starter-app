@@ -38,8 +38,6 @@
         Form, FormField, Modal, Section, StarRating, ToggleButton
         } from "../components/index.js";
 
-    export let router = {};
-
     let name = 'Svelte';
     let busy = false;
 

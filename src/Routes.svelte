@@ -1,5 +1,6 @@
 <script>
-	import { Router, Route, Link, navigateTo } from 'svero';
+	// import { Router, Route, Link, navigateTo } from 'svero';
+    import Router from 'svelte-spa-router'
 
 	import EmployeeTable from './pages/EmployeeTable.svelte';
 	import EmployeeTabs from './pages/EmployeeTabs.svelte';
@@ -12,13 +13,28 @@
 	import Contact from './pages/Contact.svelte';
 	import About from './pages/About.svelte';
 
-    //	just some JSON test data to populate components
-	import {emps} from './TestData.js';
   
+const routes = {
+    // Exact path
+    '/': Index,
+    '/login': Login,
+    "/contact/:firstname/:lastname/:rating": Contact,
+    "/table": EmployeeTable,    //   employees={emps}/>
+    "/tabs": EmployeeTabs,      //   employees={emps}/>
+    "/about/:who/:where": About,
+    "/carousel": Images,
+    "/cards": EmployeeCards,     //   employees={emps}/>
+    "/testimonials": EmployeeTestimonials,  //   employees={emps}/>
+    //  "/timeline" component={TimelinePage}/>
+    // Catch-all
+    // This is optional, but if present it must be the last
+    '*': Index,
+};
 
 </script>
+<Router {routes}/>
 
-<Router>
+<!-- <Router>
     <Route fallback path="*" component={Index} />
     <Route path="/login" component={Login} />
     <Route path="/contact/:firstname/:lastname/:rating" component={Contact} />
@@ -38,4 +54,4 @@
     </Route>
     <Route path="/timeline" component={TimelinePage}/>
     <Route path="/" component={Index} exact/>
-</Router>
+</Router> -->

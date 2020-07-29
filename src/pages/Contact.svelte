@@ -15,15 +15,15 @@
         </FormField>    
     
         <FormField label="First Name">
-            <input type="text" bind:value={firstname} id="fname" name="firstname" value={firstname} placeholder="Your name..">
+            <input type="text" bind:value={firstname} id="fname" name="firstname"  placeholder="Your name..">
         </FormField>
 
         <FormField label="Last Name">
-            <input type="text" bind:value={lastname} value={lastname} placeholder="Your last name..">
+            <input type="text" bind:value={lastname}  placeholder="Your last name..">
         </FormField>
 
         <FormField label="Password">
-            <input type="password" bind:value={pw} value={pw} placeholder="An easy to guess password please..">
+            <input type="password" bind:value={pw}  placeholder="An easy to guess password please..">
         </FormField>    
 
         <FormField label="Country">
@@ -35,7 +35,7 @@
         </FormField>
 
         <FormField label="Message">
-            <textarea bind:value={message}  value={message} placeholder="Write something.." style="height:200px"></textarea>
+            <textarea bind:value={message}  placeholder="Write something.." style="height:200px"></textarea>
         </FormField>
 
         <FormField label="How good is your day so far?">
@@ -71,7 +71,7 @@
         <div class="row">
             <Accordian header="Supplementary Info">
                 <FormField label="Bonus Info goes here">
-                    <textarea bind:value={message2}  value={message2} placeholder="Write something else .." style="height:200px"></textarea>
+                    <textarea bind:value={message2}   placeholder="Write something else .." style="height:200px"></textarea>
                 </FormField>                
             </Accordian>
         </div>
@@ -93,18 +93,17 @@
     import { onMount } from 'svelte';
 
     import { Accordian, Checkbox, Container, Counter, DatePicker, 
-        Form, FormField, Section, StarRating, ToggleButton
-        } from "../components/index.js";
+        Form, FormField, Section, StarRating, ToggleButton } from "../components/index.js";
 
-        export let router = {};
+        export let params  = {};
       
     // Those contains useful information about current route status
-    router.path; // /test
-    router.route; // Route Object
-    router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
+    params .path; // /test
+    params .route; // Route Object
+    params .params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
 
     $: {
-        router.params;
+        params;
         //console.log('router params='+JSON.stringify(router,null,2));
         initFields();
     }
@@ -137,9 +136,9 @@
         initFields();
     });
     function initFields() {
-        if (router.params.firstname) firstname = router.params.firstname;
-        if (router.params.lastname) lastname = router.params.lastname;
-        if (router.params.rating) dayRating = router.params.rating;
+        if (params.firstname) firstname = params.firstname;
+        if (params.lastname) lastname = params.lastname;
+        if (params.rating) dayRating = params.rating;
         if (controlRating) controlRating.setValue(dayRating);
     }
 

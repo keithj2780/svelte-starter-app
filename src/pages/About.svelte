@@ -1,8 +1,8 @@
 
 <h1>About {name}!</h1>
-<p>Route is {router.path}</p>
-<p>Path is {router.route}</p>
-<p>Params from URL are {JSON.stringify(router.params)} and the keys are specified in the router</p>
+<p>Route is {params.path}</p>
+<p>Path is {params.route}</p>
+<p>Params from URL are {JSON.stringify(params.params)} and the keys are specified in the router</p>
 <Container>
 
     <Section>
@@ -82,7 +82,7 @@
         
     <Section>
     <Box>
-        <h3>{name} Box Demo for {router.params.who} of {router.params.where}.</h3>
+        <h3>{name} Box Demo for {params.who} of {params.where}.</h3>
         <p><em>(mouse over for shadow effect)</em></p>
         <p>{name} is a radical new approach to building user interfaces. Whereas traditional frameworks like React and Vue do the bulk of their work in the browser, {name} shifts that work into a compile step that happens when you build your app.</p>
         <p>Instead of using techniques like virtual DOM diffing, Svelte writes code that surgically updates the DOM when the state of your app changes.</p>
@@ -185,7 +185,7 @@
 
 <script>
     import {onMount, createEventDispatcher} from 'svelte';
-	import { Link, navigateTo } from 'svero';
+	// import { Link, navigateTo } from 'svero';
 
     import { Accordian, Box, Checkbox, ColorPicker, Container, Counter, DatePicker, 
             Form, Section, StyledLink, Toast,Chip,Badge,Loader,Flipper,
@@ -193,12 +193,12 @@
         } from "../components/index.js";
 
     
-    export let router = {};
+    export let params = {};
   
     // Those contains useful information about current route status
-    router.path;
-    router.route
-    router.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
+    params.path;
+    params.route
+    params.params; // /about/bill/123/kansas { who: 'bill', where: 'kansas' }
 
     let name = 'Svelte';
     let toast1;

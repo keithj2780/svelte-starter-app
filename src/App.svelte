@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { Link, navigateTo } from 'svero';
+	// import { Link, navigateTo } from 'svero';
 
 	import Routes from './Routes.svelte';
 	import NavBar from './components/NavBar.svelte';
@@ -34,21 +34,21 @@
 <div id="main">
 
 <NavBar bind:this={navbar}>
-	<Link href="/" ><img src="./img/home.svg" alt="Home" /></Link>
-	<Link on:click={doOpenCurtain}>Side Curtain</Link>
+	<a href="#/" ><img src="./img/home.svg" alt="Home" /></a>
+	<a on:click={doOpenCurtain}>Side Curtain</a>
 	<div class="dropdown">
 		<button class="dropbtn">Dropdown <i class="fa fa-angle-down"></i></button>
 		<div class="dropdown-content" on:click={closeDropdown}>
-			<Link href="/cards"><i class="fa fa-fw "></i> Card Demo</Link>
-			<Link href="/contact/Berty/Worcester"><i class="fa fa-fw fa-sign-in"></i> Form Demo</Link>
-			<Link href="/login"><i class="fa fa-fw "></i> Modal Demo</Link>
-			<Link href="/table"><i class="fa fa-fw fa-table"></i> Table Demo</Link>
-			<Link href="/tabs"><img src="./img/credit-card.svg" alt="Tabs"/> Tabs Demo</Link>
-			<Link href="/testimonials"><i class="fa fa-fw fa-user-tie"></i> Testimonials Demo</Link>
-			<Link href="/timeline"><i class="fa fa-fw fa-user"></i> Timeline Demo</Link>
+			<a href="#/cards"><i class="fa fa-fw "></i> Card Demo</a>
+			<a href="#/contact/Berty/Worcester"><i class="fa fa-fw fa-sign-in"></i> Form Demo</a>
+			<a href="#/login"><i class="fa fa-fw "></i> Modal Demo</a>
+			<a href="#/table"><i class="fa fa-fw fa-table"></i> Table Demo</a>
+			<a href="#/tabs"><img src="./img/credit-card.svg" alt="Tabs"/> Tabs Demo</a>
+			<a href="#/testimonials"><i class="fa fa-fw fa-user-tie"></i> Testimonials Demo</a>
+			<a href="#/timeline"><i class="fa fa-fw fa-user"></i> Timeline Demo</a>
 		</div>
 	</div> 
-	<Link href="/carousel">Carousel</Link>
+	<a href="#/carousel">Carousel</a>
 	<div class="dropdown">
 		<button class="dropbtn">Mega <i class="fa fa-angle-down"></i></button>
 		<div class="dropdown-content mega-dropdown-content" on:click={closeDropdown}>
@@ -58,31 +58,31 @@
 			<div class="row">
 				<div class="column">
 					<h3>CEOs</h3>
-					<Link href="/contact/Elon/Musk/4"><i class="fa fa-fw fa-sign-in"></i> Elon</Link>
-					<Link href="/contact/Bill/Gates/3"><i class="fa fa-fw fa-sign-out"></i> Bill G</Link>
-					<Link href="/contact/Bill/Clinton/2"><i class="fa fa-fw fa-sign-out"></i> Bill C</Link>
+					<a href="#/contact/Elon/Musk/4"><i class="fa fa-fw fa-sign-in"></i> Elon</a>
+					<a href="#/contact/Bill/Gates/3"><i class="fa fa-fw fa-sign-out"></i> Bill G</a>
+					<a href="#/contact/Bill/Clinton/2"><i class="fa fa-fw fa-sign-out"></i> Bill C</a>
 				</div>
 				<div class="column">
 					<h3>Hikers</h3>
-					<Link href="/contact/Arthur/Dent/1"><i class="fa fa-fw fa-share"></i> Arthur</Link>
-					<Link href="/contact/Dirk/Gently/5"><i class="fa fa-fw fa-circle"></i> Dirk Gently</Link>
-					<Link href="/contact/Zaphod/Beeblebrox/4"><i class="fa fa-fw fa-share"></i> Zaphod</Link>
-					<Link href="/contact/Ford/Prefect/6"><i class="fa fa-fw fa-circle"></i> Ford Prefect</Link>
+					<a href="#/contact/Arthur/Dent/1"><i class="fa fa-fw fa-share"></i> Arthur</a>
+					<a href="#/contact/Dirk/Gently/5"><i class="fa fa-fw fa-circle"></i> Dirk Gently</a>
+					<a href="#/contact/Zaphod/Beeblebrox/4"><i class="fa fa-fw fa-share"></i> Zaphod</a>
+					<a href="#/contact/Ford/Prefect/6"><i class="fa fa-fw fa-circle"></i> Ford Prefect</a>
 				</div>
 				<div class="column">
 					<h3>Seinfeld</h3>
-					<Link href="/contact/Cosmo/Kramer/5"><i class="fa fa-fw fa-square"></i> Cosmo</Link>
-					<Link href="/contact/Jerry/Seinfeld/4"><i class="fa fa-fw fa-square"></i> Jerry</Link>
-					<Link href="/contact/George/Costanza/1"><i class="fa fa-fw fa-square"></i> George</Link>
-					<Link href="/contact/Elaine/Benes/2"><i class="fa fa-fw fa-forward"></i> Elaine</Link>
+					<a href="#/contact/Cosmo/Kramer/5"><i class="fa fa-fw fa-square"></i> Cosmo</a>
+					<a href="#/contact/Jerry/Seinfeld/4"><i class="fa fa-fw fa-square"></i> Jerry</a>
+					<a href="#/contact/George/Costanza/1"><i class="fa fa-fw fa-square"></i> George</a>
+					<a href="#/contact/Elaine/Benes/2"><i class="fa fa-fw fa-forward"></i> Elaine</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<Link href="/contact">Contact</Link>
+	<a href="#/contact">Contact</a>
 	<div class="topnav-right">
-		<Link href="/about">Miscellaneous Controls</Link>
-		<Link href="/login"><i class="fa fa-sign-in"></i></Link>
+		<a href="#/about">Miscellaneous Controls</a>
+		<a href="#/login"><i class="fa fa-sign-in"></i></a>
 	</div>
 </NavBar>
 
@@ -94,8 +94,8 @@
 </Hero>
 
 <SideCurtain bind:this={sideSlider} divToSlide="main">
-	<Link href="/about/Dorothy/Kansas" on:click={doCloseCurtain}>Misc</Link>
-	<Link href="/contact" on:click={doCloseCurtain}>Contact</Link>
+	<a href="#/about/Dorothy/Kansas" on:click={doCloseCurtain}>Misc</a>
+	<a href="#/contact" on:click={doCloseCurtain}>Contact</a>
 	<Container>
 		<Chip img="https://randomuser.me/api/portraits/thumb/men/51.jpg" alt="Random Dude"> Chippy</Chip>
 		<p>Quick paragraph about svelte</p>
@@ -105,14 +105,14 @@
 </div>
 
 <Footer>
-	<Link href="/">Home</Link> | 
-	<Link href="/about/Bill/New%20York">Misc</Link> | 
-	<Link href="/login">Login</Link> | 
-	<Link href="/table">Table</Link> | 
-	<Link href="/tabs">Tabs</Link> | 
-	<Link href="/contact/Edward/Scissorhands">Contact</Link> | 
-	<Link href="/cards">Cards</Link> | 
-	<Link href="/testimonials">Testimonials</Link>
+	<a href="#/">Home</a> | 
+	<a href="#/about/Bill/New%20York">Misc</a> | 
+	<a href="#/login">Login</a> | 
+	<a href="#/table">Table</a> | 
+	<a href="#/tabs">Tabs</a> | 
+	<a href="#/contact/Edward/Scissorhands">Contact</a> | 
+	<a href="#/cards">Cards</a> | 
+	<a href="#/testimonials">Testimonials</a>
 	<p>Copyright © 2019. All Rights Reserved.</p>
 </Footer>
 </div>

@@ -72,7 +72,8 @@
 
     import { Card, Container, SideMenu} from '../components/index.js';
 
-    export let employees;
+    //	just some JSON test data to populate components
+	import {employees} from '../TestData.js';
 
     onMount(() => {
         //for (let i=0;i<employees.length;i++) employees[i].id = i;

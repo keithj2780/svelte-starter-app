@@ -25,7 +25,7 @@
                     <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
             <div class="row">
-                Forgot <a href="/">password?</a>
+                Forgot <a href="#/">password?</a>
             </div>
         </Form>
     </Container>

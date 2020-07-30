@@ -93,4 +93,4 @@ Sync to AWS with
 aws s3 sync ./public/ s3://$MY-BUCKET --acl public-read
 ```
 
-or to [now](https://zeit.co/now) or [surge.sh](https://surge.sh)
+or to [vercel](https://vercel.com/) or [surge.sh](https://surge.sh)

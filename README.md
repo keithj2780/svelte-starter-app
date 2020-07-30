@@ -6,7 +6,8 @@ It is both a Component Demonstrator and also an App Starter Template for Svelte.
 
 ## Demonstration
 
-For a demonstration see [svelte-component-demo.surge.sh](http://svelte-component-demo.surge.sh/).
+~~For a demonstration see [svelte-component-demo.surge.sh](http://svelte-component-demo.surge.sh/).~~
+For a demonstration see [https://svelte-starter-app.vercel.app/].(https://svelte-starter-app.vercel.app/).
 
 ## What is contains
 
@@ -38,6 +39,10 @@ Components implemented include -
 - Section
 - Container
 - Star Rating
+- Timeline
+- Transparent Side Menu
+- Side Menu Tabs
+
 
 The components are mostly responsive. There is no grid/flexbox implemented - choose your own.  All the above are easily customised - the relevant CSS and HTML and JS are all grouped together in a single file - thanks svelte! Just delete the components and pages that you don't need.
 
